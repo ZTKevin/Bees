@@ -16,8 +16,9 @@ public class Bee {
         self.target = target
     }
     
-    func append(pollen: Pollen) {
+    func append(pollen: Pollen) -> Bee {
         self.storagePollens.append(pollen)
+        return self
     }
     
     var pollens: [Pollen] {
@@ -26,6 +27,42 @@ public class Bee {
     
     var pollensCount: Int {
         return self.storagePollens.count
+    }
+    
+    var lastPollen: Pollen {
+        return self.storagePollens.last!
+    }
+    
+    
+    public func add(_ constant: CGFloat) -> Bee {
+        self.storagePollens.last?.constant += constant
+        return self
+    }
+    
+    public func sub(_ constant: CGFloat) -> Bee {
+        self.storagePollens.last?.constant -= constant
+        return self
+    }
+    
+    public func mul(_ multiplier: CGFloat) -> Bee {
+        self.storagePollens.last?.constant *= multiplier
+        self.storagePollens.last?.multiplier *= multiplier
+        return self
+    }
+    
+    public func div(_ divisor: CGFloat) -> Bee {
+        self.storagePollens.last?.constant /= divisor
+        self.storagePollens.last?.multiplier /= divisor
+        return self
+    }
+    
+    public func prioritize(_ priority: UILayoutPriority) -> Bee {
+        self.storagePollens.last?.priority = priority
+        return self
+    }
+    
+    public func prioritize(_ priority: Float) -> Bee {
+        return self.prioritize(UILayoutPriority(rawValue: priority))
     }
     
 }
@@ -37,235 +74,109 @@ class Pollen {
     
     var constant: CGFloat = 0
     
+    var priority: UILayoutPriority? = nil
+
     init(attribute : NSLayoutAttribute) {
         self.attribute = attribute
     }
 }
 
 public extension UIView {
-    public var top: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .top))
-        return bee
-    }
-    
-    public var bottom: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .bottom))
-        return bee
-    }
-    
-    public var left: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .left))
-        return bee
-    }
-    
-    public var right: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .right))
-        return bee
-    }
-    
-    public var width: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .width))
-        return bee
-    }
-    
-    public var height: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .height))
-        return bee
-    }
-    
-    public var leading: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .leading))
-        return bee
-    }
-    
-    public var trailing: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .trailing))
-        return bee
-    }
-    
-    public var centerX: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .centerX))
-        return bee
-    }
-    
-    public var centerY: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .centerY))
-        return bee
-    }
-    
-    public var lastBaseline: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .lastBaseline))
-        return bee
-    }
-}
-
-extension Bee {
-    public var top: Bee {
-        self.append(pollen: Pollen(attribute: .top))
-        return self
-    }
-    
-    public var bottom: Bee {
-        self.append(pollen: Pollen(attribute: .bottom))
-        return self
-    }
-    
-    public var left: Bee {
-        self.append(pollen: Pollen(attribute: .left))
-        return self
-    }
-    
-    public var right: Bee {
-        self.append(pollen: Pollen(attribute: .right))
-        return self
-    }
-    
-    public var width: Bee {
-        self.append(pollen: Pollen(attribute: .width))
-        return self
-    }
-    
-    public var height: Bee {
-        self.append(pollen: Pollen(attribute: .height))
-        return self
-    }
-    
-    public var leading: Bee {
-        self.append(pollen: Pollen(attribute: .leading))
-        return self
-    }
-    
-    public var trailing: Bee {
-        self.append(pollen: Pollen(attribute: .trailing))
-        return self
-    }
-    
-    public var centerX: Bee {
-        self.append(pollen: Pollen(attribute: .centerX))
-        return self
-    }
-    
-    public var centerY: Bee {
-        self.append(pollen: Pollen(attribute: .centerY))
-        return self
-    }
-    
-    public var lastBaseline: Bee {
-        self.append(pollen: Pollen(attribute: .lastBaseline))
-        return self
-    }
-}
-
-public extension UIView {
-    public var firstBaseline: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .firstBaseline))
-        return bee
-    }
-    
-    public var leftMargin: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .leftMargin))
-        return bee
-    }
-    
-    public var rightMargin: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .rightMargin))
-        return bee
-    }
-    
-    public var topMargin: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .topMargin))
-        return bee
-    }
-    
-    public var bottomMargin: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .bottomMargin))
-        return bee
-    }
-    
-    public var leadingMargin: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .leadingMargin))
-        return bee
-    }
-    
-    public var trailingMargin: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .trailingMargin))
-        return bee
-    }
-    
-    public var centerXWithinMargins: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .centerXWithinMargins))
-        return bee
-    }
-    
-    public var centerYWithinMargins: Bee {
-        let bee = Bee(target: self)
-        bee.append(pollen: Pollen(attribute: .centerYWithinMargins))
-        return bee
+    public var bee: Bee {
+        return Bee(target: self)
     }
 }
 
 public extension Bee {
+    public var top: Bee {
+        return self.append(pollen: Pollen(attribute: .top))
+    }
+    
+    public var bottom: Bee {
+        return self.append(pollen: Pollen(attribute: .bottom))
+    }
+    
+    public var left: Bee {
+        return self.append(pollen: Pollen(attribute: .left))
+    }
+    
+    public var right: Bee {
+        return self.append(pollen: Pollen(attribute: .right))
+    }
+    
+    public var width: Bee {
+        return self.append(pollen: Pollen(attribute: .width))
+    }
+    
+    public var height: Bee {
+        return self.append(pollen: Pollen(attribute: .height))
+    }
+    
+    public var leading: Bee {
+        return self.append(pollen: Pollen(attribute: .leading))
+    }
+    
+    public var trailing: Bee {
+        return self.append(pollen: Pollen(attribute: .trailing))
+    }
+    
+    public var centerX: Bee {
+        return self.append(pollen: Pollen(attribute: .centerX))
+    }
+    
+    public var centerY: Bee {
+        return self.append(pollen: Pollen(attribute: .centerY))
+    }
+    
+    public var lastBaseline: Bee {
+        return self.append(pollen: Pollen(attribute: .lastBaseline))
+    }
+    
+    
+    
+    @available(iOS 8.0, *)
     public var firstBaseline: Bee {
-        self.append(pollen: Pollen(attribute: .firstBaseline))
-        return self
+        return self.append(pollen: Pollen(attribute: .firstBaseline))
     }
     
+    @available(iOS 8.0, *)
     public var leftMargin: Bee {
-        self.append(pollen: Pollen(attribute: .leftMargin))
-        return self
+        return self.append(pollen: Pollen(attribute: .leftMargin))
     }
     
+    @available(iOS 8.0, *)
     public var rightMargin: Bee {
-        self.append(pollen: Pollen(attribute: .rightMargin))
-        return self
+        return self.append(pollen: Pollen(attribute: .rightMargin))
     }
     
+    @available(iOS 8.0, *)
     public var topMargin: Bee {
-        self.append(pollen: Pollen(attribute: .topMargin))
-        return self
+        return self.append(pollen: Pollen(attribute: .topMargin))
     }
     
+    @available(iOS 8.0, *)
     public var bottomMargin: Bee {
-        self.append(pollen: Pollen(attribute: .bottomMargin))
-        return self
+        return self.append(pollen: Pollen(attribute: .bottomMargin))
     }
     
+    @available(iOS 8.0, *)
     public var leadingMargin: Bee {
-        self.append(pollen: Pollen(attribute: .leadingMargin))
-        return self
+        return self.append(pollen: Pollen(attribute: .leadingMargin))
     }
     
+    @available(iOS 8.0, *)
     public var trailingMargin: Bee {
-        self.append(pollen: Pollen(attribute: .trailingMargin))
-        return self
+        return self.append(pollen: Pollen(attribute: .trailingMargin))
     }
     
+    @available(iOS 8.0, *)
     public var centerXWithinMargins: Bee {
-        self.append(pollen: Pollen(attribute: .centerXWithinMargins))
-        return self
+        return self.append(pollen: Pollen(attribute: .centerXWithinMargins))
     }
     
+    @available(iOS 8.0, *)
     public var centerYWithinMargins: Bee {
-        self.append(pollen: Pollen(attribute: .centerYWithinMargins))
-        return self
+        return self.append(pollen: Pollen(attribute: .centerYWithinMargins))
     }
 }
+

@@ -11,6 +11,8 @@ import Bees
 
 
 class ViewController: UIViewController {
+    
+    
 
     private lazy var blueView: UIView = {
         let view = UIView()
@@ -35,11 +37,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        blueView.width.height == [200,100]
-        blueView.top.left == self.view.top.left
         
-        orangeView.width.height == blueView.width.height
-        orangeView.bottom.right == self.view.bottom.right
+    
+        blueView.bee.edge == UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    
     }
 
     
