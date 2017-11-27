@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         superView.layoutIfNeeded()
         
         
-        UIView.animateKeyframes(withDuration: 3, delay: 0, options: [.repeat, .calculationModeLinear, .autoreverse], animations: {
+        UIView.animateKeyframes(withDuration: 3, delay: 0, options: [.repeat, .autoreverse], animations: {
 
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25){
                 centerViewXOffsetConstraint.constant = 37

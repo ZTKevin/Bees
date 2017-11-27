@@ -29,7 +29,9 @@ import Foundation
 public extension Bee {
 
     public var size: Bee {
-        return self.append(pollen: Pollen(attribute: .width)).append(pollen: Pollen(attribute: .height))
+        return self
+            .append(pollen: Pollen(attribute: .width))
+            .append(pollen: Pollen(attribute: .height))
     }
 
     @discardableResult
@@ -50,15 +52,18 @@ public extension Bee {
     
     
     public var center: Bee {
-        return self.append(pollen: Pollen(attribute: .centerX)).append(pollen: Pollen(attribute: .centerY))
+        return self
+            .append(pollen: Pollen(attribute: .centerX))
+            .append(pollen: Pollen(attribute: .centerY))
     }
     
     
     public var edge: Bee {
-        return self.append(pollen: Pollen(attribute: .top))
-        .append(pollen: Pollen(attribute: .left))
-        .append(pollen: Pollen(attribute: .bottom))
-        .append(pollen: Pollen(attribute: .right))
+        return self
+            .append(pollen: Pollen(attribute: .top))
+            .append(pollen: Pollen(attribute: .left))
+            .append(pollen: Pollen(attribute: .bottom))
+            .append(pollen: Pollen(attribute: .right))
     }
     
     @discardableResult
