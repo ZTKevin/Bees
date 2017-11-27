@@ -8,6 +8,8 @@
 
 Bees 是一个简单易用的自动布局库，复杂的布局只需要几句简单的代码就可以完成。
 
+<img src="/Assets/iOSDemo.gif" align="right" height="400px" hspace="0px" vspace="20px">
+
 比如：
 ```swift
 
@@ -30,7 +32,6 @@ rightBottomView.bee.right.bottom == superView.bee.right.bottom - 10
 rightBottomView.bee.left == centerView.bee.right + 10
 rightBottomView.bee.top == centerView.bee.top
 ```
-![iosDemo](https://raw.githubusercontent.com/hongcaiyu/Bees/master/Assets/iOSDemo.gif)
 ## 目录
 
 - [使用环境](#使用环境)
