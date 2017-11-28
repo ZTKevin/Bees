@@ -58,6 +58,22 @@ $ gem install cocoapods
 $ pod install
 ```
 
+### Carthage
+如果没有安装[Carthage](https://github.com/Carthage/Carthage) ，可以使用以下命令安装。
+
+```bash
+$ brew install carthage
+```
+
+安装好Carthage后，在Cartfile中添加：
+```ruby
+  github "hongcaiyu/Bees"
+```
+然后在项目根目录内执行以下命令
+```bash
+$ carthage update
+```
+
 ### 手动
 
 如果你没有使用CocoaPods等包管理工具，就需要手动倒入Bees项目到自己的项目中。
