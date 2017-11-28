@@ -1,25 +1,30 @@
 # Bees
 
-
+<img src="/Assets/iOSDemo.gif" align="right" height="350px" hspace="0px" vspace="0px">
 
 [![Platform](https://img.shields.io/cocoapods/p/Bees.svg?style=flat)](https://github.com/hongcaiyu/Bees)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Bees.svg)](https://github.com/hongcaiyu/Bees)
 [![Language](https://img.shields.io/badge/language-swift4-orange.svg)](https://github.com/hongcaiyu/Bees)
 
+
+
+
 Bees 是一个简单易用的自动布局库，复杂的布局只需要几句简单的代码就可以完成。
 
-<img src="/Assets/iOSDemo.gif" align="right" height="400px" hspace="0px" vspace="20px">
 
 如：
 ```swift
 
 view1.bee.size == CGSize(width: 111, height: 111)
+
 view1.bee.center == superView.bee.center
 
 view2.bee.edge == UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
 view3.bee.right.bottom == superView.bee.right.bottom - 10
+
 ...
+
 ```
 ## 目录
 
