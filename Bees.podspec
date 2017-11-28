@@ -3,11 +3,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bees"
-  s.version      = "0.1.0"
-  s.summary      = "Auto Layout in Swift"
+  s.version      = "0.1.1"
+  s.summary      = "简单易用的Swift布局库"
 
   s.description  = <<-DESC
-                    "Convenient auto layout framework"
+                    "Bees 是一个简单易用的布局库，支持链式调用。减少了使用代码自动布局时的代码量。"
                    DESC
 
   s.homepage     = "https://github.com/hongcaiyu/Bees"
@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
   # s.tvos.deployment_target = "9.0"
 
   s.source       = { :git => "https://github.com/hongcaiyu/Bees.git", :tag => s.version }
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   s.source_files  = "Bees/*.swift"
 
 end
