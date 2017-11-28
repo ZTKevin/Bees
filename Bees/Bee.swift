@@ -105,6 +105,13 @@ public extension UIView {
     }
 }
 
+@available(iOS 9.0, *)
+public extension UILayoutGuide {
+    public var bee: Bee {
+        return Bee(target: self)
+    }
+}
+
 public extension Bee {
     public var top: Bee {
         return self.append(pollen: Pollen(attribute: .top))
