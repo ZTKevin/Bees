@@ -10,27 +10,16 @@ Bees 是一个简单易用的自动布局库，复杂的布局只需要几句简
 
 <img src="/Assets/iOSDemo.gif" align="right" height="400px" hspace="0px" vspace="20px">
 
-比如：
+如：
 ```swift
 
-centerView.bee.size == CGSize(width: 111, height: 111)
-centerView.bee.center == superView.bee.center
+view1.bee.size == CGSize(width: 111, height: 111)
+view1.bee.center == superView.bee.center
 
-leftTopView.bee.left.top == superView.bee.left.top + 10
-leftTopView.bee.right == centerView.bee.left - 10
-leftTopView.bee.bottom == centerView.bee.bottom
-        
-rightTopView.bee.top.right == superView.bee.top.add(10).right.sub(10)
-rightTopView.bee.bottom == centerView.bee.top - 10
-rightTopView.bee.left == centerView.bee.left
-        
-leftBottomView.bee.left.bottom == superView.bee.left.add(10).bottom.sub(10)
-leftBottomView.bee.top == centerView.bee.bottom + 10
-leftBottomView.bee.right == centerView.bee.right
+view2.bee.edge == UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
-rightBottomView.bee.right.bottom == superView.bee.right.bottom - 10
-rightBottomView.bee.left == centerView.bee.right + 10
-rightBottomView.bee.top == centerView.bee.top
+view3.bee.right.bottom == superView.bee.right.bottom - 10
+...
 ```
 ## 目录
 
