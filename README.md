@@ -36,6 +36,7 @@ rightBottomView.bee.top == centerView.bee.top
 
 - [使用环境](#使用环境)
 - [安装](#安装)
+- [使用](#使用)
 - [License](#license)
 
 ## 使用环境
@@ -65,6 +66,9 @@ $ pod install
 ### 手动
 
 如果你没有使用CocoaPods等包管理工具，就需要手动倒入Bees项目到自己的项目中。
+
+## 使用
+[使用指南](https://github.com/hongcaiyu/Bees/wiki)
 
 ## License
 
