@@ -111,62 +111,44 @@ public extension Bee {
     
     @discardableResult
     public static func ==(lhs: Bee, rhs: Bee) -> [NSLayoutConstraint] {
-        let layoutConstraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .equal)
-        
-        for layoutConstraint in layoutConstraints {
-            layoutConstraint.isActive = true
-        }
-        return layoutConstraints
+        let constraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .equal)
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
     
     @discardableResult
     public static func >=(lhs: Bee, rhs: Bee) -> [NSLayoutConstraint] {
-        let layoutConstraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
-        
-        for layoutConstraint in layoutConstraints {
-            layoutConstraint.isActive = true
-        }
-        return layoutConstraints
+        let constraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
     
     @discardableResult
     public static func <=(lhs: Bee, rhs: Bee) -> [NSLayoutConstraint] {
-        let layoutConstraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
-        
-        for layoutConstraint in layoutConstraints {
-            layoutConstraint.isActive = true
-        }
-        return layoutConstraints
+        let constraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
     
     @discardableResult
     public static func ==(lhs: Bee, rhs: [CGFloat]) -> [NSLayoutConstraint] {
-        let layoutConstraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .equal)
-        
-        for layoutConstraint in layoutConstraints {
-            layoutConstraint.isActive = true
-        }
-        return layoutConstraints
+        let constraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .equal)
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
     
     @discardableResult
     public static func >=(lhs: Bee, rhs: [CGFloat]) -> [NSLayoutConstraint] {
-        let layoutConstraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
-        
-        for layoutConstraint in layoutConstraints {
-            layoutConstraint.isActive = true
-        }
-        return layoutConstraints
+        let constraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
     
     @discardableResult
     public static func <=(lhs: Bee, rhs: [CGFloat]) -> [NSLayoutConstraint] {
-        let layoutConstraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
-        
-        for layoutConstraint in layoutConstraints {
-            layoutConstraint.isActive = true
-        }
-        return layoutConstraints
+        let constraints = self.createLayoutConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
     
     @discardableResult
