@@ -42,44 +42,56 @@ view3.bee.right.bottom == superView.bee.right.bottom - 10
 
 ## 安装
 
-### CocoaPods
+### [CocoaPods](http://cocoapods.org)
 
-如果没有安装[CocoaPods](http://cocoapods.org) ，可以使用以下命令安装。
-
-```bash
-$ gem install cocoapods
-```
-安装好CocoaPods后，在Podfile中添加：
 ```ruby
   pod 'Bees'
 ```
-然后在项目根目录内执行以下命令
-```bash
-$ pod install
-```
 
-### Carthage
-如果没有安装[Carthage](https://github.com/Carthage/Carthage) ，可以使用以下命令安装。
 
-```bash
-$ brew install carthage
-```
+### [Carthage](https://github.com/Carthage/Carthage)
 
-安装好Carthage后，在Cartfile中添加：
+
 ```ruby
   github "hongcaiyu/Bees"
 ```
-然后在项目根目录内执行以下命令
-```bash
-$ carthage update
-```
 
-### 手动
 
-如果你没有使用CocoaPods等包管理工具，就需要手动倒入Bees项目到自己的项目中。
+
 
 ## 使用
-[使用指南](https://github.com/hongcaiyu/Bees/wiki)
+### 快速上手
+创建约束
+```swift
+view1.bee.left == view2.bee.left //view1的左边等于view2的左边。
+view1.bee.left >= view2.bee.left //view1的左边大于等于view2的左边。
+view1.bee.width <= view2.bee.width //view1的宽度小于等于view2的宽度。
+view1.bee.width == 100 //view1的宽度=100
+```
+
+同时创建多个约束
+```swift
+view1.bee.width.height == [100, 200] //view1的宽度=100,高度=200
+view1.bee.width.height == 100 //view1的宽度=100,高度=100
+view1.bee.left.top == view2.bee.left.top //view1的左边等于view2的左边，view1的上边等于view2的上边。
+```
+
+约束的调整
+```swift
+view1.bee.width == view2.bee.width * 2 //view1的宽度等于view2的宽度 * 2。
+view1.bee.width * 2 == view2.bee.width //view1的宽度等于view2的宽度 / 2。
+view1.bee.width == view2.bee.width / 2 //view1的宽度等于view2的宽度 / 2。
+view1.bee.width / 2 == view2.bee.width //view1的宽度等于view2的宽度 * 2。
+
+//类似的
+view1.bee.width == view2.bee.width + 100 //view1的宽度等于view2的宽度 + 100。
+```
+对链式组合的多个属性运算时，运算会作用于多个属性之上。
+```swift
+view1.bee.width.height == view2.bee.width.height * 2 //view1的宽度和高度都等于view2的宽度和高度 * 2。
+```
+### 完整的使用文档在：[使用指南](https://github.com/hongcaiyu/Bees/wiki)
+
 
 ## License
 
