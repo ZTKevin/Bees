@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18060AE01FC7C25B006559CE"
                BuildableName = "Bees.framework"
-               BlueprintName = "Bees"
+               BlueprintName = "Bees-iOS"
                ReferencedContainer = "container:Bees.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,7 +49,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18060AE01FC7C25B006559CE"
             BuildableName = "Bees.framework"
-            BlueprintName = "Bees"
+            BlueprintName = "Bees-iOS"
             ReferencedContainer = "container:Bees.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18060AE01FC7C25B006559CE"
             BuildableName = "Bees.framework"
-            BlueprintName = "Bees"
+            BlueprintName = "Bees-iOS"
             ReferencedContainer = "container:Bees.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

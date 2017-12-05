@@ -24,7 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
+#if os(macOS)
+    import AppKit
+    public typealias LayoutRelation = NSLayoutConstraint.Relation
+#else
+    import UIKit
+    public typealias LayoutRelation = NSLayoutRelation
+#endif
 
 infix operator ~ : BeeLayoutPriorityPrecedence
 
@@ -35,7 +41,7 @@ precedencegroup BeeLayoutPriorityPrecedence {
 }
 
 extension Bee {
-    static func createLayoutConstraints(lhs: Bee, rhs: Bee, relation: NSLayoutRelation) -> [NSLayoutConstraint]{
+    static func createLayoutConstraints(lhs: Bee, rhs: Bee, relation: LayoutRelation) -> [NSLayoutConstraint]{
         var layoutConstraints = [NSLayoutConstraint]()
         
         if lhs.pollensCount != rhs.pollensCount {
@@ -44,7 +50,7 @@ extension Bee {
             let item = lhs.target
             let toItem = rhs.target
             
-            (item as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
+            (item as? View)?.translatesAutoresizingMaskIntoConstraints = false
             
             for index in 0..<lhs.pollensCount{
                 let leftPollen = lhs.pollens[index]
@@ -72,7 +78,7 @@ extension Bee {
         return layoutConstraints
     }
     
-    static func createLayoutConstraints(lhs: Bee, rhs: [CGFloat], relation: NSLayoutRelation) -> [NSLayoutConstraint]{
+    static func createLayoutConstraints(lhs: Bee, rhs: [CGFloat], relation: LayoutRelation) -> [NSLayoutConstraint]{
         var layoutConstraints = [NSLayoutConstraint]()
 
         if lhs.pollensCount != rhs.count {
@@ -80,7 +86,7 @@ extension Bee {
         } else {
             let item = lhs.target
             
-            (item as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
+            (item as? View)?.translatesAutoresizingMaskIntoConstraints = false
             
             for index in 0..<lhs.pollensCount{
                 let leftPollen = lhs.pollens[index]
@@ -198,7 +204,7 @@ public extension Bee {
         return lhs
     }
     
-    public static func ~(lhs: Bee, rhs: UILayoutPriority) -> Bee {
+    public static func ~(lhs: Bee, rhs: LayoutPriority) -> Bee {
         for pollen in lhs.pollens {
             pollen.priority = rhs
         }
@@ -206,7 +212,7 @@ public extension Bee {
     }
     
     public static func ~(lhs: Bee, rhs: Float) -> Bee {
-        return lhs ~ UILayoutPriority(rhs)
+        return lhs ~ LayoutPriority(rhs)
     }
 }
 

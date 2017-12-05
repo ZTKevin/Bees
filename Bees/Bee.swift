@@ -24,7 +24,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import UIKit
+#if os(macOS)
+    import AppKit
+    public typealias View = NSView
+    @available(OSX 10.11, *)
+    public typealias LayoutGuide = NSLayoutGuide
+    public typealias LayoutPriority = NSLayoutConstraint.Priority
+    public typealias LayoutAttribute = NSLayoutConstraint.Attribute
+    
+#else
+    import UIKit
+    public typealias View = UIView
+    @available(iOS 9.0, tvOS 9.0, *)
+    public typealias LayoutGuide = UILayoutGuide
+    public typealias LayoutPriority = UILayoutPriority
+    public typealias LayoutAttribute = NSLayoutAttribute
+#endif
 
 public class Bee {
     let target: Any
@@ -74,39 +89,39 @@ public class Bee {
         return self
     }
     
-    public func prioritize(_ priority: UILayoutPriority) -> Bee {
+    public func prioritize(_ priority: LayoutPriority) -> Bee {
         self.storagePollens.last?.priority = priority
         return self
     }
     
     public func prioritize(_ priority: Float) -> Bee {
-        return self.prioritize(UILayoutPriority(rawValue: priority))
+        return self.prioritize(LayoutPriority(rawValue: priority))
     }
     
 }
 
 class Pollen {
-    let attribute : NSLayoutAttribute
+    let attribute : LayoutAttribute
     
     var multiplier: CGFloat = 1
     
     var constant: CGFloat = 0
     
-    var priority: UILayoutPriority? = nil
+    var priority: LayoutPriority? = nil
 
-    init(attribute : NSLayoutAttribute) {
+    init(attribute : LayoutAttribute) {
         self.attribute = attribute
     }
 }
 
-public extension UIView {
+public extension View {
     public var bee: Bee {
         return Bee(target: self)
     }
 }
 
-@available(iOS 9.0, *)
-public extension UILayoutGuide {
+@available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
+public extension LayoutGuide {
     public var bee: Bee {
         return Bee(target: self)
     }
@@ -157,51 +172,54 @@ public extension Bee {
         return self.append(pollen: Pollen(attribute: .lastBaseline))
     }
     
-    
-    
-    @available(iOS 8.0, *)
+    @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
     public var firstBaseline: Bee {
         return self.append(pollen: Pollen(attribute: .firstBaseline))
     }
     
-    @available(iOS 8.0, *)
+    #if os(iOS) || os(tvOS)
+    
+    @available(iOS 8.0, tvOS 9.0, *)
     public var leftMargin: Bee {
         return self.append(pollen: Pollen(attribute: .leftMargin))
     }
     
-    @available(iOS 8.0, *)
+    @available(iOS 8.0, tvOS 9.0, *)
     public var rightMargin: Bee {
         return self.append(pollen: Pollen(attribute: .rightMargin))
     }
     
-    @available(iOS 8.0, *)
+    @available(iOS 8.0, tvOS 9.0, *)
     public var topMargin: Bee {
         return self.append(pollen: Pollen(attribute: .topMargin))
     }
     
-    @available(iOS 8.0, *)
+    @available(iOS 8.0, tvOS 9.0, *)
     public var bottomMargin: Bee {
         return self.append(pollen: Pollen(attribute: .bottomMargin))
     }
     
-    @available(iOS 8.0, *)
+    @available(iOS 8.0, tvOS 9.0, *)
     public var leadingMargin: Bee {
         return self.append(pollen: Pollen(attribute: .leadingMargin))
     }
     
-    @available(iOS 8.0, *)
+    @available(iOS 8.0, tvOS 9.0, *)
     public var trailingMargin: Bee {
         return self.append(pollen: Pollen(attribute: .trailingMargin))
     }
     
-    @available(iOS 8.0, *)
+    @available(iOS 8.0, tvOS 9.0, *)
     public var centerXWithinMargins: Bee {
         return self.append(pollen: Pollen(attribute: .centerXWithinMargins))
     }
     
-    @available(iOS 8.0, *)
+    @available(iOS 8.0, tvOS 9.0, *)
     public var centerYWithinMargins: Bee {
         return self.append(pollen: Pollen(attribute: .centerYWithinMargins))
     }
+    
+    #endif
+    
 }
 

@@ -24,7 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
+#if os(macOS)
+    import AppKit
+    public typealias EdgeInsets = NSEdgeInsets
+#else
+    import UIKit
+    public typealias EdgeInsets = UIEdgeInsets
+#endif
 
 public extension Bee {
 
@@ -36,44 +42,45 @@ public extension Bee {
     public static func >=(lhs: Bee, rhs: CGSize) -> [NSLayoutConstraint] {
         return lhs >= [rhs.width, rhs.height]
     }
-    
+
     @discardableResult
     public static func ==(lhs: Bee, rhs: CGSize) -> [NSLayoutConstraint] {
         return lhs == [rhs.width, rhs.height]
     }
-    
+
     @discardableResult
     public static func <=(lhs: Bee, rhs: CGSize) -> [NSLayoutConstraint] {
         return lhs <= [rhs.width, rhs.height]
     }
-    
-    
-    
+
+
+
     public var center: Bee {
         return self.centerX.centerY
     }
-    
-    
+
+
     public var edge: Bee {
         return self.top.left.bottom.right
     }
-    
+
     @discardableResult
-    public static func ==(lhs: Bee, rhs: UIEdgeInsets) -> [NSLayoutConstraint] {
-        guard let superview = (lhs.target as? UIView)?.superview else { return [] }
+    public static func ==(lhs: Bee, rhs: EdgeInsets) -> [NSLayoutConstraint] {
+        guard let superview = (lhs.target as? View)?.superview else { return [] }
         return lhs == superview.bee.top.add(rhs.top).left.add(rhs.left).bottom.sub(rhs.bottom).right.sub(rhs.right)
     }
-    
+
     @discardableResult
-    public static func >=(lhs: Bee, rhs: UIEdgeInsets) -> [NSLayoutConstraint] {
-        guard let superview = (lhs.target as? UIView)?.superview else { return [] }
+    public static func >=(lhs: Bee, rhs: EdgeInsets) -> [NSLayoutConstraint] {
+        guard let superview = (lhs.target as? View)?.superview else { return [] }
         return lhs >= superview.bee.top.add(rhs.top).left.add(rhs.left).bottom.sub(rhs.bottom).right.sub(rhs.right)
     }
-    
+
     @discardableResult
-    public static func <=(lhs: Bee, rhs: UIEdgeInsets) -> [NSLayoutConstraint] {
-        guard let superview = (lhs.target as? UIView)?.superview else { return [] }
+    public static func <=(lhs: Bee, rhs: EdgeInsets) -> [NSLayoutConstraint] {
+        guard let superview = (lhs.target as? View)?.superview else { return [] }
         return lhs <= superview.bee.top.add(rhs.top).left.add(rhs.left).bottom.sub(rhs.bottom).right.sub(rhs.right)
     }
 }
+
 
