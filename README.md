@@ -29,14 +29,14 @@ view3.bee.right.bottom == superView.bee.right.bottom - 10
 ```
 ## 目录
 
-- [使用环境](#使用环境)
+- [环境](#环境)
 - [安装](#安装)
 - [使用](#使用)
 - [License](#license)
 
-## 使用环境
+## 环境
 
-- iOS 8.0+
+- iOS 8.0+/tvOS 9.0+/macOS 10.10+
 - Xcode 9.0+
 - Swift 4.0+
 
