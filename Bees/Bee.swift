@@ -41,78 +41,87 @@
     public typealias LayoutAttribute = NSLayoutAttribute
 #endif
 
-public class Bee {
+
+
+public class Bee: Sequence {
+    
+    public class Pollen {
+        let attribute : LayoutAttribute
+        
+        var multiplier: CGFloat = 1
+        
+        var constant: CGFloat = 0
+        
+        var priority: LayoutPriority? = nil
+        
+        var next: Pollen? = nil
+
+        init(attribute : LayoutAttribute) {
+            self.attribute = attribute
+        }
+    }
+    
+    public struct Iterator: IteratorProtocol {
+        
+        private var current: Pollen?
+    
+        public mutating func next() -> Pollen? {
+            let next = current
+            current = current?.next
+            return next
+        }
+        
+        init(pollen: Pollen?) {
+            self.current = pollen
+        }
+    }
+    
+    
     let target: Any
-    private var storagePollens = [Pollen]()
+  
+    private var head: Pollen? = nil
+    private var tail: Pollen? = nil
+    private(set) var count = 0
     
     init(target: Any) {
         self.target = target
     }
     
-    func append(pollen: Pollen) -> Bee {
-        self.storagePollens.append(pollen)
+    var last: Pollen? {
+        return tail
+    }
+    
+    
+    func enqueue(pollen: Pollen) -> Bee {
+        count += 1
+        if let tail = tail {
+            tail.next = pollen
+        }else{
+            head = pollen
+        }
+        tail = pollen
         return self
     }
     
-    var pollens: [Pollen] {
-        return self.storagePollens
+    func dequeue() -> Pollen? {
+        if let head = head {
+            count -= 1
+            self.head = head.next
+            if self.head == nil {
+                self.tail = nil
+            }
+            return head
+        }
+        return nil
     }
     
-    var pollensCount: Int {
-        return self.storagePollens.count
-    }
-    
-    var lastPollen: Pollen {
-        return self.storagePollens.last!
-    }
-    
-    
-    public func add(_ constant: CGFloat) -> Bee {
-        self.storagePollens.last?.constant += constant
-        return self
-    }
-    
-    public func sub(_ constant: CGFloat) -> Bee {
-        self.storagePollens.last?.constant -= constant
-        return self
-    }
-    
-    public func mul(_ multiplier: CGFloat) -> Bee {
-        self.storagePollens.last?.constant *= multiplier
-        self.storagePollens.last?.multiplier *= multiplier
-        return self
-    }
-    
-    public func div(_ divisor: CGFloat) -> Bee {
-        self.storagePollens.last?.constant /= divisor
-        self.storagePollens.last?.multiplier /= divisor
-        return self
-    }
-    
-    public func prioritize(_ priority: LayoutPriority) -> Bee {
-        self.storagePollens.last?.priority = priority
-        return self
-    }
-    
-    public func prioritize(_ priority: Float) -> Bee {
-        return self.prioritize(LayoutPriority(rawValue: priority))
+    public func makeIterator() -> Bee.Iterator {
+        return Iterator(pollen: self.head)
     }
     
 }
 
-class Pollen {
-    let attribute : LayoutAttribute
-    
-    var multiplier: CGFloat = 1
-    
-    var constant: CGFloat = 0
-    
-    var priority: LayoutPriority? = nil
 
-    init(attribute : LayoutAttribute) {
-        self.attribute = attribute
-    }
-}
 
 public extension View {
     public var bee: Bee {
@@ -129,94 +138,94 @@ public extension LayoutGuide {
 
 public extension Bee {
     public var top: Bee {
-        return self.append(pollen: Pollen(attribute: .top))
+        return self.enqueue(pollen: Pollen(attribute: .top))
     }
     
     public var bottom: Bee {
-        return self.append(pollen: Pollen(attribute: .bottom))
+        return self.enqueue(pollen: Pollen(attribute: .bottom))
     }
     
     public var left: Bee {
-        return self.append(pollen: Pollen(attribute: .left))
+        return self.enqueue(pollen: Pollen(attribute: .left))
     }
     
     public var right: Bee {
-        return self.append(pollen: Pollen(attribute: .right))
+        return self.enqueue(pollen: Pollen(attribute: .right))
     }
     
     public var width: Bee {
-        return self.append(pollen: Pollen(attribute: .width))
+        return self.enqueue(pollen: Pollen(attribute: .width))
     }
     
     public var height: Bee {
-        return self.append(pollen: Pollen(attribute: .height))
+        return self.enqueue(pollen: Pollen(attribute: .height))
     }
     
     public var leading: Bee {
-        return self.append(pollen: Pollen(attribute: .leading))
+        return self.enqueue(pollen: Pollen(attribute: .leading))
     }
     
     public var trailing: Bee {
-        return self.append(pollen: Pollen(attribute: .trailing))
+        return self.enqueue(pollen: Pollen(attribute: .trailing))
     }
     
     public var centerX: Bee {
-        return self.append(pollen: Pollen(attribute: .centerX))
+        return self.enqueue(pollen: Pollen(attribute: .centerX))
     }
     
     public var centerY: Bee {
-        return self.append(pollen: Pollen(attribute: .centerY))
+        return self.enqueue(pollen: Pollen(attribute: .centerY))
     }
     
     public var lastBaseline: Bee {
-        return self.append(pollen: Pollen(attribute: .lastBaseline))
+        return self.enqueue(pollen: Pollen(attribute: .lastBaseline))
     }
     
     @available(iOS 9.0, OSX 10.11, tvOS 9.0, *)
     public var firstBaseline: Bee {
-        return self.append(pollen: Pollen(attribute: .firstBaseline))
+        return self.enqueue(pollen: Pollen(attribute: .firstBaseline))
     }
     
     #if os(iOS) || os(tvOS)
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var leftMargin: Bee {
-        return self.append(pollen: Pollen(attribute: .leftMargin))
+        return self.enqueue(pollen: Pollen(attribute: .leftMargin))
     }
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var rightMargin: Bee {
-        return self.append(pollen: Pollen(attribute: .rightMargin))
+        return self.enqueue(pollen: Pollen(attribute: .rightMargin))
     }
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var topMargin: Bee {
-        return self.append(pollen: Pollen(attribute: .topMargin))
+        return self.enqueue(pollen: Pollen(attribute: .topMargin))
     }
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var bottomMargin: Bee {
-        return self.append(pollen: Pollen(attribute: .bottomMargin))
+        return self.enqueue(pollen: Pollen(attribute: .bottomMargin))
     }
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var leadingMargin: Bee {
-        return self.append(pollen: Pollen(attribute: .leadingMargin))
+        return self.enqueue(pollen: Pollen(attribute: .leadingMargin))
     }
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var trailingMargin: Bee {
-        return self.append(pollen: Pollen(attribute: .trailingMargin))
+        return self.enqueue(pollen: Pollen(attribute: .trailingMargin))
     }
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var centerXWithinMargins: Bee {
-        return self.append(pollen: Pollen(attribute: .centerXWithinMargins))
+        return self.enqueue(pollen: Pollen(attribute: .centerXWithinMargins))
     }
     
     @available(iOS 8.0, tvOS 9.0, *)
     public var centerYWithinMargins: Bee {
-        return self.append(pollen: Pollen(attribute: .centerYWithinMargins))
+        return self.enqueue(pollen: Pollen(attribute: .centerYWithinMargins))
     }
     
     #endif
