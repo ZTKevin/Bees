@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bees"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "简单易用的Swift布局库"
 
   s.description  = <<-DESC
