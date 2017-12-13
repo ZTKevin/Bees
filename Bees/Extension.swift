@@ -64,23 +64,6 @@ public extension Bee {
         return self.top.left.bottom.right
     }
 
-    @discardableResult
-    public static func ==(lhs: Bee, rhs: EdgeInsets) -> [NSLayoutConstraint] {
-        guard let superview = (lhs.target as? View)?.superview else { return [] }
-        return lhs == superview.bee.top.add(rhs.top).left.add(rhs.left).bottom.sub(rhs.bottom).right.sub(rhs.right)
-    }
-
-    @discardableResult
-    public static func >=(lhs: Bee, rhs: EdgeInsets) -> [NSLayoutConstraint] {
-        guard let superview = (lhs.target as? View)?.superview else { return [] }
-        return lhs >= superview.bee.top.add(rhs.top).left.add(rhs.left).bottom.sub(rhs.bottom).right.sub(rhs.right)
-    }
-
-    @discardableResult
-    public static func <=(lhs: Bee, rhs: EdgeInsets) -> [NSLayoutConstraint] {
-        guard let superview = (lhs.target as? View)?.superview else { return [] }
-        return lhs <= superview.bee.top.add(rhs.top).left.add(rhs.left).bottom.sub(rhs.bottom).right.sub(rhs.right)
-    }
 }
 
 

@@ -26,10 +26,10 @@
 
 #if os(macOS)
     import AppKit
-    public typealias LayoutRelation = NSLayoutConstraint.Relation
+    typealias LayoutRelation = NSLayoutConstraint.Relation
 #else
     import UIKit
-    public typealias LayoutRelation = NSLayoutRelation
+    typealias LayoutRelation = NSLayoutRelation
 #endif
 
 infix operator ~ : BeeLayoutPriorityPrecedence
