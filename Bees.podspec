@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bees"
-  s.version      = "0.1.6"
+  s.version      = "0.2.0"
   s.summary      = "简单易用的Swift布局库"
 
   s.description  = <<-DESC
@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
 
   s.author             = { "Caiyu Hong" => "hongcaiyu@live.com" }
 
-  s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.10"
+  s.ios.deployment_target = "9.0"
+  s.osx.deployment_target = "10.11"
   s.tvos.deployment_target = "9.0"
 
   s.source       = { :git => "https://github.com/hongcaiyu/Bees.git", :tag => s.version }
