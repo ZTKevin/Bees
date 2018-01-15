@@ -38,21 +38,21 @@ public protocol LinkFormation: Formation where ConstraintSet == [LayoutConstrain
 }
 
 public class LinkBee {
-    let linkBee: LinkBee?
+    let leftBee: LinkBee?
     let pollen: Pollen
     
     init(linkBee: LinkBee?, pollen: Pollen) {
-        self.linkBee = linkBee
+        self.leftBee = linkBee
         self.pollen = pollen
     }
     
     init(left: QueenBee, attribute: LayoutAttribute) {
-        self.linkBee = nil
+        self.leftBee = nil
         self.pollen = Pollen(attribute: attribute, bee: left)
     }
     
     init(left: LinkBee, attribute: LayoutAttribute) {
-        self.linkBee = left
+        self.leftBee = left
         self.pollen = Pollen(attribute: attribute, bee: left.pollen.bee)
     }
 }
@@ -91,7 +91,7 @@ public extension LinkFormation where Self: LinkBee {
     public static func makeActiveConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> [LayoutConstraint] {
         var constraints = [LayoutConstraint]()
         func makeConstraints(lhs: LinkBee, rhs: LinkBee) {
-            if let left = lhs.linkBee, let right = rhs.linkBee {
+            if let left = lhs.leftBee, let right = rhs.leftBee {
                 makeConstraints(lhs: left, rhs: right)
             }
             let constraint = Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.pollen, relation: relation)
@@ -108,7 +108,7 @@ public extension LinkFormation where Self: LinkBee {
         var bee: LinkBee? = lhs
         while let linkBee = bee {
             linkBee.pollen.prioritize(rhs)
-            bee = linkBee.linkBee
+            bee = linkBee.leftBee
         }
     }
 }
@@ -134,7 +134,7 @@ public func ==(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstrain
 
 public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
     let constraints = (Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.1, relation: .equal),
-                       Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.0, relation: .equal))
+                       Pollen.makeConstraint(lhs: lhs.leftBee!.pollen, rhs: rhs.0, relation: .equal))
     constraints.0.isActive = true
     constraints.1.isActive = true
     return constraints
