@@ -31,12 +31,6 @@
     import UIKit
 #endif
 
-
-public protocol LinkFormation: Formation where ConstraintSet == [LayoutConstraint] {
-
-
-}
-
 public class LinkBee {
     let leftBee: LinkBee?
     let pollen: Pollen
@@ -57,7 +51,7 @@ public class LinkBee {
     }
 }
 
-public extension LinkFormation where Self: LinkBee {
+public extension Formation where Self: LinkBee {
     public func prioritize(_ priority: LayoutPriority) -> Self {
         self.pollen.prioritize(priority)
         return self
@@ -114,15 +108,15 @@ public extension LinkFormation where Self: LinkBee {
 }
 
 
-public class YAxisLinkBee<Left>: LinkBee, LinkFormation {
+public class YAxisLinkBee<Left>: LinkBee, Formation {
     public typealias ConstraintSet = [LayoutConstraint]
 }
 
-public class XAxisLinkBee<Left>: LinkBee, LinkFormation {
+public class XAxisLinkBee<Left>: LinkBee, Formation {
     public typealias ConstraintSet = [LayoutConstraint]
 }
 
-public class DimensionLinkBee<Left>: LinkBee, LinkFormation {
+public class DimensionLinkBee<Left>: LinkBee, Formation {
     public typealias ConstraintSet = [LayoutConstraint]
 }
 
@@ -140,7 +134,7 @@ public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat,
     return constraints
 }
 
-public extension LinkFormation where Self: LinkBee {
+public extension Formation where Self: LinkBee {
     public var left: XAxisLinkBee<Self> {
         return XAxisLinkBee(left: self, attribute: .left)
     }
