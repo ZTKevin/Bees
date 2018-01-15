@@ -35,11 +35,6 @@ public class LinkBee {
     let leftBee: LinkBee?
     let pollen: Pollen
     
-    init(linkBee: LinkBee?, pollen: Pollen) {
-        self.leftBee = linkBee
-        self.pollen = pollen
-    }
-    
     init(left: QueenBee, attribute: LayoutAttribute) {
         self.leftBee = nil
         self.pollen = Pollen(attribute: attribute, bee: left)
@@ -51,7 +46,7 @@ public class LinkBee {
     }
 }
 
-public extension Formation where Self: LinkBee {
+public extension Formation where Self: LinkBee, ConstraintSet == [LayoutConstraint] {
     public func prioritize(_ priority: LayoutPriority) -> Self {
         self.pollen.prioritize(priority)
         return self
@@ -120,18 +115,48 @@ public class DimensionLinkBee<Left>: LinkBee, Formation {
     public typealias ConstraintSet = [LayoutConstraint]
 }
 
-public func ==(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
-    let constraint = Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs, relation: .equal)
+private func makeActiveConstraints(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat, relation: LayoutRelation) -> LayoutConstraint {
+    let constraint = Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs, relation: relation)
     constraint.isActive = true
     return constraint
 }
 
-public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
-    let constraints = (Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.1, relation: .equal),
-                       Pollen.makeConstraint(lhs: lhs.leftBee!.pollen, rhs: rhs.0, relation: .equal))
+private func makeActiveConstraints(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat), relation: LayoutRelation) -> (LayoutConstraint,LayoutConstraint) {
+    let constraints = (Pollen.makeConstraint(lhs: lhs.leftBee!.pollen, rhs: rhs.0, relation: relation),
+                       Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.1, relation: relation))
     constraints.0.isActive = true
     constraints.1.isActive = true
     return constraints
+}
+
+@discardableResult
+public func ==(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
+    return makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .equal)
+}
+
+@discardableResult
+public func >=(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
+    return makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
+}
+
+@discardableResult
+public func <=(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
+    return makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
+}
+
+@discardableResult
+public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
+    return makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .equal)
+}
+
+@discardableResult
+public func >=(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
+    return makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
+}
+
+@discardableResult
+public func <=(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
+    return makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
 }
 
 public extension Formation where Self: LinkBee {
