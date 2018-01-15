@@ -69,12 +69,12 @@ public class Pollen {
         self.priority = priority
     }
     
-    static func makeConstraint(lhs: Pollen, rhs: Pollen, relation: LayoutRelation) -> NSLayoutConstraint {
+    static func makeConstraint(lhs: Pollen, rhs: Pollen, relation: LayoutRelation) -> LayoutConstraint {
         (lhs.bee.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
         let multiplier = rhs.multiplier / lhs.multiplier
         let constant = rhs.constant - lhs.constant
         
-        let layoutConstraint = NSLayoutConstraint(item: lhs.bee.target,
+        let layoutConstraint = LayoutConstraint(item: lhs.bee.target,
                                                   attribute: lhs.attribute,
                                                   relatedBy: relation,
                                                   toItem: rhs.bee.target,
@@ -90,12 +90,12 @@ public class Pollen {
     }
 
     
-    static func makeConstraint(lhs: Pollen, rhs: CGFloat, relation: LayoutRelation) -> NSLayoutConstraint {
+    static func makeConstraint(lhs: Pollen, rhs: CGFloat, relation: LayoutRelation) -> LayoutConstraint {
         (lhs.bee.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
         let multiplier = 1 / lhs.multiplier
         let constant = rhs - lhs.constant
         
-        let layoutConstraint = NSLayoutConstraint(item: lhs.bee.target,
+        let layoutConstraint = LayoutConstraint(item: lhs.bee.target,
                                                   attribute: lhs.attribute,
                                                   relatedBy: relation,
                                                   toItem: nil,

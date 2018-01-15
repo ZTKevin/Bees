@@ -37,9 +37,24 @@ public protocol LinkFormation: Formation where ConstraintSet == [LayoutConstrain
 
 }
 
-public protocol LinkBee {
-    var linkBee: LinkBee? { get }
-    var pollen: Pollen { get }
+public class LinkBee {
+    let linkBee: LinkBee?
+    let pollen: Pollen
+    
+    init(linkBee: LinkBee?, pollen: Pollen) {
+        self.linkBee = linkBee
+        self.pollen = pollen
+    }
+    
+    init(left: QueenBee, attribute: LayoutAttribute) {
+        self.linkBee = nil
+        self.pollen = Pollen(attribute: attribute, bee: left)
+    }
+    
+    init(left: LinkBee, attribute: LayoutAttribute) {
+        self.linkBee = left
+        self.pollen = Pollen(attribute: attribute, bee: left.pollen.bee)
+    }
 }
 
 public extension LinkFormation where Self: LinkBee {
@@ -73,8 +88,8 @@ public extension LinkFormation where Self: LinkBee {
     }
     
     // MARK: Formation
-    public static func makeActiveConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> [NSLayoutConstraint] {
-        var constraints = [NSLayoutConstraint]()
+    public static func makeActiveConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> [LayoutConstraint] {
+        var constraints = [LayoutConstraint]()
         func makeConstraints(lhs: LinkBee, rhs: LinkBee) {
             if let left = lhs.linkBee, let right = rhs.linkBee {
                 makeConstraints(lhs: left, rhs: right)
@@ -84,7 +99,7 @@ public extension LinkFormation where Self: LinkBee {
         }
         
         makeConstraints(lhs: lhs, rhs: rhs)
-        NSLayoutConstraint.activate(constraints)
+        LayoutConstraint.activate(constraints)
         
         return constraints
     }
@@ -99,68 +114,29 @@ public extension LinkFormation where Self: LinkBee {
 }
 
 
-public class YAxisLinkBee<Left>: LinkFormation, LinkBee {
-    public typealias ConstraintSet = [NSLayoutConstraint]
-    
-    public var linkBee: LinkBee?
-    public var pollen: Pollen
-    
-    
-    init(left: QueenBee, attribute: LayoutAttribute) {
-        self.linkBee = nil
-        self.pollen = Pollen(attribute: attribute, bee: left)
-    }
-    
-    init(left: LinkBee, attribute: LayoutAttribute) {
-        self.linkBee = left
-        self.pollen = Pollen(attribute: attribute, bee: left.pollen.bee)
-    }
+public class YAxisLinkBee<Left>: LinkBee, LinkFormation {
+    public typealias ConstraintSet = [LayoutConstraint]
 }
 
-public class XAxisLinkBee<Left>: LinkFormation, LinkBee {
-    public typealias ConstraintSet = [NSLayoutConstraint]
-    
-    public var linkBee: LinkBee?
-    public var pollen: Pollen
-    
-    init(left: QueenBee, attribute: LayoutAttribute) {
-        self.linkBee = nil
-        self.pollen = Pollen(attribute: attribute, bee: left)
-    }
-    
-    init(left: LinkBee, attribute: LayoutAttribute) {
-        self.linkBee = left
-        self.pollen = Pollen(attribute: attribute, bee: left.pollen.bee)
-    }
+public class XAxisLinkBee<Left>: LinkBee, LinkFormation {
+    public typealias ConstraintSet = [LayoutConstraint]
 }
 
-public class DimensionLinkBee<Left>: LinkFormation, LinkBee {
-    public typealias ConstraintSet = [NSLayoutConstraint]
-    
-    public var linkBee: LinkBee?
-    public var pollen: Pollen
-    
-    init(left: QueenBee, attribute: LayoutAttribute) {
-        self.linkBee = nil
-        self.pollen = Pollen(attribute: attribute, bee: left)
-    }
-    
-    init(left: LinkBee, attribute: LayoutAttribute) {
-        self.linkBee = left
-        self.pollen = Pollen(attribute: attribute, bee: left.pollen.bee)
-    }
+public class DimensionLinkBee<Left>: LinkBee, LinkFormation {
+    public typealias ConstraintSet = [LayoutConstraint]
 }
 
-public func ==(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> NSLayoutConstraint {
+public func ==(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
     let constraint = Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs, relation: .equal)
     constraint.isActive = true
     return constraint
 }
 
-public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> [NSLayoutConstraint] {
-    let constraints = [Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.1, relation: .equal),
-                       Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.0, relation: .equal)]
-    NSLayoutConstraint.activate(constraints)
+public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
+    let constraints = (Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.1, relation: .equal),
+                       Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.0, relation: .equal))
+    constraints.0.isActive = true
+    constraints.1.isActive = true
     return constraints
 }
 
