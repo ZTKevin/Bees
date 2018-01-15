@@ -25,26 +25,26 @@ class ViewController: UIViewController {
         let sizeConstraints = centerView.bee.size == CGSize(width: 300, height: 300)
         let pointConstraints = centerView.bee.center == superView.bee.center
         
-        let centerViewXOffsetConstraint = pointConstraints[0]
-        let centerViewYOffsetConstraint = pointConstraints[1]
+        let centerViewXOffsetConstraint = pointConstraints.x
+        let centerViewYOffsetConstraint = pointConstraints.y
         
-        let centerViewWidthConstraint = sizeConstraints[0]
-        let centerViewHeightConstraint = sizeConstraints[1]
+        let centerViewWidthConstraint = sizeConstraints.width
+        let centerViewHeightConstraint = sizeConstraints.height
         
-        leftTopView.bee.left.top == superView.bee.left.top + 10
-        leftTopView.bee.right == centerView.bee.left - 10
+        leftTopView.bee.left.top == superView.bee.left.add(10).top.add(10)
+        leftTopView.bee.right == centerView.bee.left.sub(10)
         leftTopView.bee.bottom == centerView.bee.bottom
         
         rightTopView.bee.top.right == superView.bee.top.add(10).right.sub(10)
-        rightTopView.bee.bottom == centerView.bee.top - 10
+        rightTopView.bee.bottom == centerView.bee.top.sub(10)
         rightTopView.bee.left == centerView.bee.left
         
         leftBottomView.bee.left.bottom == superView.bee.left.add(10).bottom.sub(10)
-        leftBottomView.bee.top == centerView.bee.bottom + 10
+        leftBottomView.bee.top == centerView.bee.bottom.add(10)
         leftBottomView.bee.right == centerView.bee.right
         
-        rightBottomView.bee.right.bottom == superView.bee.right.bottom - 10
-        rightBottomView.bee.left == centerView.bee.right + 10
+        rightBottomView.bee.right.bottom == superView.bee.right.sub(10).bottom.sub(10)
+        rightBottomView.bee.left == centerView.bee.right.add(10)
         rightBottomView.bee.top == centerView.bee.top
         
         superView.layoutIfNeeded()

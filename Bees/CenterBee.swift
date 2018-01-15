@@ -1,8 +1,8 @@
 //
-//  Extension.swift
+//  CenterBee.swift
 //  Bees
 //
-//  Created by hongcaiyu on 24/11/17.
+//  Created by hongcaiyu on 15/1/18.
 //
 //  Copyright (c) 2017 Caiyu Hong <hongcaiyu@live.com>
 //
@@ -26,44 +26,39 @@
 
 #if os(macOS)
     import AppKit
-    public typealias EdgeInsets = NSEdgeInsets
 #else
     import UIKit
-    public typealias EdgeInsets = UIEdgeInsets
 #endif
 
-public extension Bee {
-
-    public var size: Bee {
-        return self.width.height
+public extension QueenBee {
+    public var center: CenterBee {
+        return CenterBee(queenBee: self)
     }
-
-    @discardableResult
-    public static func >=(lhs: Bee, rhs: CGSize) -> [NSLayoutConstraint] {
-        return lhs >= [rhs.width, rhs.height]
-    }
-
-    @discardableResult
-    public static func ==(lhs: Bee, rhs: CGSize) -> [NSLayoutConstraint] {
-        return lhs == [rhs.width, rhs.height]
-    }
-
-    @discardableResult
-    public static func <=(lhs: Bee, rhs: CGSize) -> [NSLayoutConstraint] {
-        return lhs <= [rhs.width, rhs.height]
-    }
-
-
-
-    public var center: Bee {
-        return self.centerX.centerY
-    }
-
-
-    public var edge: Bee {
-        return self.top.left.bottom.right
-    }
-
 }
 
+public class CenterBee: Formation {
+    public typealias ConstraintSet = (x: LayoutConstraint, y: LayoutConstraint)
+    
+    let x: Pollen
+    let y: Pollen
+
+    init(queenBee: QueenBee) {
+        self.x = Pollen(attribute: .centerX, bee: queenBee)
+        self.y = Pollen(attribute: .centerY, bee: queenBee)
+    }
+    
+    public static func makeActiveConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> (x: LayoutConstraint, y: LayoutConstraint) {
+        let xConstraint = Pollen.makeConstraint(lhs: lhs.x, rhs: rhs.x, relation: relation)
+        let yConstraint = Pollen.makeConstraint(lhs: lhs.y, rhs: rhs.y, relation: relation)
+        xConstraint.isActive = true
+        yConstraint.isActive = true
+        return (x: xConstraint, y: yConstraint)
+    }
+    
+    public static func prioritize(lhs: CenterBee, rhs: LayoutPriority) {
+        lhs.x.prioritize(rhs)
+        lhs.y.prioritize(rhs)
+    }
+    
+}
 

@@ -13,19 +13,30 @@
 		18060AF81FC7C38E006559CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060AF61FC7C38E006559CE /* Main.storyboard */; };
 		18060AFA1FC7C38E006559CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18060AF91FC7C38E006559CE /* Assets.xcassets */; };
 		18060AFD1FC7C38E006559CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060AFB1FC7C38E006559CE /* LaunchScreen.storyboard */; };
+		181DA5C1200707910069A8F2 /* Pollen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C0200707910069A8F2 /* Pollen.swift */; };
+		181DA5C2200707910069A8F2 /* Pollen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C0200707910069A8F2 /* Pollen.swift */; };
+		181DA5C3200707910069A8F2 /* Pollen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C0200707910069A8F2 /* Pollen.swift */; };
+		181DA5C520070B800069A8F2 /* LinkBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C420070B800069A8F2 /* LinkBee.swift */; };
+		181DA5C620070B800069A8F2 /* LinkBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C420070B800069A8F2 /* LinkBee.swift */; };
+		181DA5C720070B800069A8F2 /* LinkBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C420070B800069A8F2 /* LinkBee.swift */; };
+		181DA5C9200746AF0069A8F2 /* SizeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C8200746AF0069A8F2 /* SizeBee.swift */; };
+		181DA5CA200746AF0069A8F2 /* SizeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C8200746AF0069A8F2 /* SizeBee.swift */; };
+		181DA5CB200746AF0069A8F2 /* SizeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C8200746AF0069A8F2 /* SizeBee.swift */; };
+		181DA5D2200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
+		181DA5D3200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
+		181DA5D4200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
+		181DA5D6200C4BEC0069A8F2 /* EdgeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */; };
+		181DA5D7200C4BEC0069A8F2 /* EdgeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */; };
+		181DA5D8200C4BEC0069A8F2 /* EdgeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */; };
 		187D5E5D1FC7C607005986AD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
-		187D5E5F1FC7CCAB005986AD /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5E1FC7CCAB005986AD /* Formation.swift */; };
 		187D5E601FC7F48F005986AD /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		187D5E611FC7F48F005986AD /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		187D5E641FC81B64005986AD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E631FC81B64005986AD /* Extension.swift */; };
 		18EB4D3D1FD68E5B00843A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D3C1FD68E5B00843A49 /* AppDelegate.swift */; };
 		18EB4D3F1FD68E5B00843A49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D3E1FD68E5B00843A49 /* ViewController.swift */; };
 		18EB4D421FD68E5B00843A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EB4D401FD68E5B00843A49 /* Main.storyboard */; };
 		18EB4D441FD68E5B00843A49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EB4D431FD68E5B00843A49 /* Assets.xcassets */; };
 		18EB4D491FD68EB100843A49 /* Bees.h in Headers */ = {isa = PBXBuildFile; fileRef = 18060AE41FC7C25B006559CE /* Bees.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18EB4D4A1FD68EBE00843A49 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
-		18EB4D4B1FD68EBE00843A49 /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5E1FC7CCAB005986AD /* Formation.swift */; };
-		18EB4D4C1FD68EBE00843A49 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E631FC81B64005986AD /* Extension.swift */; };
 		18EB4D4D1FD68F8F00843A49 /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D201FD68D5C00843A49 /* Bees.framework */; };
 		18EB4D4E1FD68F8F00843A49 /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D201FD68D5C00843A49 /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18EB4D591FD690D600843A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D581FD690D600843A49 /* AppDelegate.swift */; };
@@ -37,8 +48,6 @@
 		18EB4D691FD6949F00843A49 /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D2D1FD68DA000843A49 /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18EB4D6D1FD6954000843A49 /* Bees.h in Headers */ = {isa = PBXBuildFile; fileRef = 18060AE41FC7C25B006559CE /* Bees.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18EB4D6E1FD6954E00843A49 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
-		18EB4D6F1FD6954E00843A49 /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5E1FC7CCAB005986AD /* Formation.swift */; };
-		18EB4D701FD6954E00843A49 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E631FC81B64005986AD /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,9 +121,12 @@
 		18060AF91FC7C38E006559CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18060AFC1FC7C38E006559CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18060AFE1FC7C38E006559CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181DA5C0200707910069A8F2 /* Pollen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pollen.swift; sourceTree = "<group>"; };
+		181DA5C420070B800069A8F2 /* LinkBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBee.swift; sourceTree = "<group>"; };
+		181DA5C8200746AF0069A8F2 /* SizeBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeBee.swift; sourceTree = "<group>"; };
+		181DA5D1200C49480069A8F2 /* CenterBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBee.swift; sourceTree = "<group>"; };
+		181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBee.swift; sourceTree = "<group>"; };
 		187D5E5C1FC7C607005986AD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
-		187D5E5E1FC7CCAB005986AD /* Formation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formation.swift; sourceTree = "<group>"; };
-		187D5E631FC81B64005986AD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		18EB4D201FD68D5C00843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB4D2D1FD68DA000843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB4D3A1FD68E5A00843A49 /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,8 +222,11 @@
 				18060AE41FC7C25B006559CE /* Bees.h */,
 				18060AE51FC7C25B006559CE /* Info.plist */,
 				187D5E5C1FC7C607005986AD /* Bee.swift */,
-				187D5E5E1FC7CCAB005986AD /* Formation.swift */,
-				187D5E631FC81B64005986AD /* Extension.swift */,
+				181DA5C0200707910069A8F2 /* Pollen.swift */,
+				181DA5C420070B800069A8F2 /* LinkBee.swift */,
+				181DA5C8200746AF0069A8F2 /* SizeBee.swift */,
+				181DA5D1200C49480069A8F2 /* CenterBee.swift */,
+				181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */,
 			);
 			path = Bees;
 			sourceTree = "<group>";
@@ -256,11 +271,11 @@
 			children = (
 				18EB4D581FD690D600843A49 /* AppDelegate.swift */,
 				18EB4D5A1FD690D600843A49 /* ViewController.swift */,
+				18EB4D661FD6912000843A49 /* View.swift */,
 				18EB4D5C1FD690D600843A49 /* Assets.xcassets */,
 				18EB4D5E1FD690D600843A49 /* Main.storyboard */,
 				18EB4D611FD690D600843A49 /* Info.plist */,
 				18EB4D621FD690D600843A49 /* macOS_Demo.entitlements */,
-				18EB4D661FD6912000843A49 /* View.swift */,
 			);
 			path = "macOS Demo";
 			sourceTree = "<group>";
@@ -524,8 +539,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				187D5E5D1FC7C607005986AD /* Bee.swift in Sources */,
-				187D5E641FC81B64005986AD /* Extension.swift in Sources */,
-				187D5E5F1FC7CCAB005986AD /* Formation.swift in Sources */,
+				181DA5D6200C4BEC0069A8F2 /* EdgeBee.swift in Sources */,
+				181DA5C520070B800069A8F2 /* LinkBee.swift in Sources */,
+				181DA5C1200707910069A8F2 /* Pollen.swift in Sources */,
+				181DA5C9200746AF0069A8F2 /* SizeBee.swift in Sources */,
+				181DA5D2200C49480069A8F2 /* CenterBee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,8 +561,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EB4D4A1FD68EBE00843A49 /* Bee.swift in Sources */,
-				18EB4D4B1FD68EBE00843A49 /* Formation.swift in Sources */,
-				18EB4D4C1FD68EBE00843A49 /* Extension.swift in Sources */,
+				181DA5D7200C4BEC0069A8F2 /* EdgeBee.swift in Sources */,
+				181DA5C620070B800069A8F2 /* LinkBee.swift in Sources */,
+				181DA5C2200707910069A8F2 /* Pollen.swift in Sources */,
+				181DA5CA200746AF0069A8F2 /* SizeBee.swift in Sources */,
+				181DA5D3200C49480069A8F2 /* CenterBee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,8 +574,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EB4D6E1FD6954E00843A49 /* Bee.swift in Sources */,
-				18EB4D6F1FD6954E00843A49 /* Formation.swift in Sources */,
-				18EB4D701FD6954E00843A49 /* Extension.swift in Sources */,
+				181DA5D8200C4BEC0069A8F2 /* EdgeBee.swift in Sources */,
+				181DA5C720070B800069A8F2 /* LinkBee.swift in Sources */,
+				181DA5C3200707910069A8F2 /* Pollen.swift in Sources */,
+				181DA5CB200746AF0069A8F2 /* SizeBee.swift in Sources */,
+				181DA5D4200C49480069A8F2 /* CenterBee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,7 +782,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Bees/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.Lion.Bees;
 				PRODUCT_NAME = Bees;
@@ -781,7 +805,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Bees/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.Lion.Bees;
 				PRODUCT_NAME = Bees;
@@ -881,7 +905,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Bees/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "self.Lion.Bees-macOS";
 				PRODUCT_NAME = Bees;
 				SDKROOT = macosx;
@@ -904,7 +928,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Bees/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "self.Lion.Bees-macOS";
 				PRODUCT_NAME = Bees;
 				SDKROOT = macosx;
