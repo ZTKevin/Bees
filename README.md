@@ -20,9 +20,7 @@ view1.bee.size == CGSize(width: 111, height: 111)
 
 view1.bee.center == superView.bee.center
 
-view2.bee.edge == UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-
-view3.bee.right.bottom == superView.bee.right.bottom - 10
+view3.bee.right.bottom == superView.bee.right.bottom.sub(10)
 
 ...
 
@@ -36,7 +34,7 @@ view3.bee.right.bottom == superView.bee.right.bottom - 10
 
 ## 环境
 
-- iOS 8.0+/tvOS 9.0+/macOS 10.10+
+- iOS 9.0+/tvOS 9.0+/macOS 10.11+
 - Xcode 9.0+
 - Swift 4.0+
 
@@ -71,24 +69,19 @@ view1.bee.width == 100 //view1的宽度=100
 
 同时创建多个约束
 ```swift
-view1.bee.width.height == [100, 200] //view1的宽度=100,高度=200
-view1.bee.width.height == 100 //view1的宽度=100,高度=100
+view1.bee.width.height == (100, 200) //view1的宽度=100,高度=200
 view1.bee.left.top == view2.bee.left.top //view1的左边等于view2的左边，view1的上边等于view2的上边。
 ```
 
 约束的调整
 ```swift
-view1.bee.width == view2.bee.width * 2 //view1的宽度等于view2的宽度 * 2。
-view1.bee.width * 2 == view2.bee.width //view1的宽度等于view2的宽度 / 2。
-view1.bee.width == view2.bee.width / 2 //view1的宽度等于view2的宽度 / 2。
-view1.bee.width / 2 == view2.bee.width //view1的宽度等于view2的宽度 * 2。
+view1.bee.width == view2.bee.width.mul(2) //view1的宽度等于view2的宽度 * 2。
+view1.bee.width.mul(2) == view2.bee.width //view1的宽度等于view2的宽度 / 2。
+view1.bee.width == view2.bee.width.div(2) //view1的宽度等于view2的宽度 / 2。
+view1.bee.width.div(2) == view2.bee.width //view1的宽度等于view2的宽度 * 2。
 
 //类似的
-view1.bee.width == view2.bee.width + 100 //view1的宽度等于view2的宽度 + 100。
-```
-对链式组合的多个属性运算时，运算会作用于多个属性之上。
-```swift
-view1.bee.width.height == view2.bee.width.height * 2 //view1的宽度和高度都等于view2的宽度和高度 * 2。
+view1.bee.width == view2.bee.width.add(100) //view1的宽度等于view2的宽度 + 100。
 ```
 ### 完整的使用文档在：[使用指南](https://github.com/hongcaiyu/Bees/wiki)
 
