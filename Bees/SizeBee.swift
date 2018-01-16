@@ -49,11 +49,9 @@ public class SizeBee: Formation {
         self.height = Pollen(attribute: .height, bee: queenBee)
     }
     
-    public static func makeActiveConstraints(lhs: SizeBee, rhs: SizeBee, relation: LayoutRelation) -> (width: LayoutConstraint, height: LayoutConstraint) {
+    public static func makeConstraints(lhs: SizeBee, rhs: SizeBee, relation: LayoutRelation) -> (width: LayoutConstraint, height: LayoutConstraint) {
         let widthConstraint = Pollen.makeConstraint(lhs: lhs.width, rhs: rhs.width, relation: relation)
         let heightConstraint = Pollen.makeConstraint(lhs: lhs.height, rhs: rhs.height, relation: relation)
-        widthConstraint.isActive = true
-        heightConstraint.isActive = true
         return (width: widthConstraint, height: heightConstraint)
     }
     
@@ -62,27 +60,25 @@ public class SizeBee: Formation {
         lhs.height.prioritize(rhs)
     }
     
-    private static func makeActiveConstraints(lhs: SizeBee, rhs: CGSize, relation: LayoutRelation) -> (width: LayoutConstraint, height: LayoutConstraint) {
+    private static func makeConstraints(lhs: SizeBee, rhs: CGSize, relation: LayoutRelation) -> (width: LayoutConstraint, height: LayoutConstraint) {
         let widthConstraint = Pollen.makeConstraint(lhs: lhs.width, rhs: rhs.width, relation: relation)
         let heightConstraint = Pollen.makeConstraint(lhs: lhs.height, rhs: rhs.height, relation: relation)
-        widthConstraint.isActive = true
-        heightConstraint.isActive = true
         return (width: widthConstraint, height: heightConstraint)
     }
     
     @discardableResult
     public static func ==(lhs: SizeBee, rhs: CGSize) -> (width: LayoutConstraint, height: LayoutConstraint) {
-        return self.makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .equal)
+        return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .equal)
     }
     
     @discardableResult
     public static func >=(lhs: SizeBee, rhs: CGSize) -> (width: LayoutConstraint, height: LayoutConstraint) {
-        return self.makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
+        return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
     }
     
     @discardableResult
     public static func <=(lhs: SizeBee, rhs: CGSize) -> (width: LayoutConstraint, height: LayoutConstraint) {
-        return self.makeActiveConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
+        return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
     }
     
 }

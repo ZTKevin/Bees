@@ -94,6 +94,7 @@ public class Pollen {
         } else if let priority = rhs.priority {
             layoutConstraint.priority = priority
         }
+        layoutConstraint.isActive = true
         return layoutConstraint
     }
     
@@ -113,6 +114,7 @@ public class Pollen {
         if let priority = lhs.priority {
             layoutConstraint.priority = priority
         }
+        layoutConstraint.isActive = true
         return layoutConstraint
     }
 }

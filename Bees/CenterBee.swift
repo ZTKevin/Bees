@@ -47,11 +47,9 @@ public class CenterBee: Formation {
         self.y = Pollen(attribute: .centerY, bee: queenBee)
     }
     
-    public static func makeActiveConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> (x: LayoutConstraint, y: LayoutConstraint) {
+    public static func makeConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> (x: LayoutConstraint, y: LayoutConstraint) {
         let xConstraint = Pollen.makeConstraint(lhs: lhs.x, rhs: rhs.x, relation: relation)
         let yConstraint = Pollen.makeConstraint(lhs: lhs.y, rhs: rhs.y, relation: relation)
-        xConstraint.isActive = true
-        yConstraint.isActive = true
         return (x: xConstraint, y: yConstraint)
     }
     
