@@ -31,6 +31,19 @@
     import UIKit
 #endif
 
+public struct LinkConstraintSet {
+    
+    private var constraints = [LayoutConstraint]()
+
+    public subscript(index: Int) -> LayoutConstraint {
+        return constraints[index]
+    }
+    
+    fileprivate mutating func append(_ constraint: LayoutConstraint) {
+        self.constraints.append(constraint)
+    }
+}
+
 public class LinkBee {
     let leftBee: LinkBee?
     let pollen: Pollen
@@ -46,7 +59,7 @@ public class LinkBee {
     }
 }
 
-public extension Formation where Self: LinkBee, ConstraintSet == [LayoutConstraint] {
+public extension Formation where Self: LinkBee, ConstraintSet == LinkConstraintSet {
     public func prioritize(_ priority: LayoutPriority) -> Self {
         self.pollen.prioritize(priority)
         return self
@@ -77,8 +90,8 @@ public extension Formation where Self: LinkBee, ConstraintSet == [LayoutConstrai
     }
     
     // MARK: Formation
-    public static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> [LayoutConstraint] {
-        var constraints = [LayoutConstraint]()
+    public static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> LinkConstraintSet {
+        var constraints = LinkConstraintSet()
         func makeConstraints(lhs: LinkBee, rhs: LinkBee) {
             if let left = lhs.leftBee, let right = rhs.leftBee {
                 makeConstraints(lhs: left, rhs: right)
@@ -102,55 +115,57 @@ public extension Formation where Self: LinkBee, ConstraintSet == [LayoutConstrai
 
 
 public class YAxisLinkBee<Left>: LinkBee, Formation {
-    public typealias ConstraintSet = [LayoutConstraint]
+    public typealias ConstraintSet = LinkConstraintSet
 }
 
 public class XAxisLinkBee<Left>: LinkBee, Formation {
-    public typealias ConstraintSet = [LayoutConstraint]
+    public typealias ConstraintSet = LinkConstraintSet
 }
 
 public class DimensionLinkBee<Left>: LinkBee, Formation {
-    public typealias ConstraintSet = [LayoutConstraint]
+    public typealias ConstraintSet = LinkConstraintSet
 }
 
-private func makeConstraints(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat, relation: LayoutRelation) -> LayoutConstraint {
-    let constraint = Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs, relation: relation)
-    return constraint
+private func makeConstraints(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat, relation: LayoutRelation) -> LinkConstraintSet {
+    var constraints = LinkConstraintSet()
+    constraints.append(Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs, relation: relation))
+    return constraints
 }
 
-private func makeConstraints(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat), relation: LayoutRelation) -> (LayoutConstraint,LayoutConstraint) {
-    let constraints = (Pollen.makeConstraint(lhs: lhs.leftBee!.pollen, rhs: rhs.0, relation: relation),
-                       Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.1, relation: relation))
+private func makeConstraints(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat), relation: LayoutRelation) -> LinkConstraintSet {
+    var constraints = LinkConstraintSet()
+    constraints.append(Pollen.makeConstraint(lhs: lhs.leftBee!.pollen, rhs: rhs.0, relation: relation))
+    constraints.append(Pollen.makeConstraint(lhs: lhs.pollen, rhs: rhs.1, relation: relation))
     return constraints
 }
 
 @discardableResult
-public func ==(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
+public func ==(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LinkConstraintSet {
     return makeConstraints(lhs: lhs, rhs: rhs, relation: .equal)
 }
 
 @discardableResult
-public func >=(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
+public func >=(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LinkConstraintSet {
     return makeConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
 }
 
 @discardableResult
-public func <=(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LayoutConstraint {
+public func <=(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat) -> LinkConstraintSet {
     return makeConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
 }
 
 @discardableResult
-public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
+public func ==(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> LinkConstraintSet {
     return makeConstraints(lhs: lhs, rhs: rhs, relation: .equal)
 }
 
 @discardableResult
-public func >=(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
+public func >=(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> LinkConstraintSet {
     return makeConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
 }
 
 @discardableResult
-public func <=(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> (LayoutConstraint,LayoutConstraint) {
+public func <=(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat, CGFloat)) -> LinkConstraintSet {
     return makeConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
 }
 
