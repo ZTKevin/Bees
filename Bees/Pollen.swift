@@ -78,7 +78,11 @@ public class Pollen {
     }
     
     private static func openAutoLayoutIfNeed(lhs: QueenBee, rhs: QueenBee) {
-        guard let view1 = lhs.target as? View, let view2 = rhs.target as? View else { return }
+        guard let view1 = lhs.target as? View, let view2 = rhs.target as? View else {
+            (lhs.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
+            (rhs.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
+            return
+        }
         if view1.superview == view2 {
             view1.translatesAutoresizingMaskIntoConstraints = false
         } else if view2.superview == view1 {
