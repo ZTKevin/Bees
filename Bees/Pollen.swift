@@ -47,6 +47,14 @@ public class Pollen {
         self.bee = bee
     }
     
+    func multiplier(_ multiplier: CGFloat = 1) {
+        self.multiplier = multiplier
+    }
+    
+    func constant(_ constant: CGFloat = 0) {
+        self.constant = constant
+    }
+    
     func add(_ constant: CGFloat) {
         self.constant += constant
     }
@@ -75,12 +83,12 @@ public class Pollen {
         let constant = rhs.constant - lhs.constant
         
         let layoutConstraint = LayoutConstraint(item: lhs.bee.target,
-                                                  attribute: lhs.attribute,
-                                                  relatedBy: relation,
-                                                  toItem: rhs.bee.target,
-                                                  attribute: rhs.attribute,
-                                                  multiplier: multiplier,
-                                                  constant: constant)
+                                                attribute: lhs.attribute,
+                                                relatedBy: relation,
+                                                toItem: rhs.bee.target,
+                                                attribute: rhs.attribute,
+                                                multiplier: multiplier,
+                                                constant: constant)
         if let priority = lhs.priority {
             layoutConstraint.priority = priority
         } else if let priority = rhs.priority {
@@ -88,7 +96,7 @@ public class Pollen {
         }
         return layoutConstraint
     }
-
+    
     
     static func makeConstraint(lhs: Pollen, rhs: CGFloat, relation: LayoutRelation) -> LayoutConstraint {
         (lhs.bee.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
@@ -96,12 +104,12 @@ public class Pollen {
         let constant = rhs - lhs.constant
         
         let layoutConstraint = LayoutConstraint(item: lhs.bee.target,
-                                                  attribute: lhs.attribute,
-                                                  relatedBy: relation,
-                                                  toItem: nil,
-                                                  attribute: .notAnAttribute,
-                                                  multiplier: multiplier,
-                                                  constant: constant)
+                                                attribute: lhs.attribute,
+                                                relatedBy: relation,
+                                                toItem: nil,
+                                                attribute: .notAnAttribute,
+                                                multiplier: multiplier,
+                                                constant: constant)
         if let priority = lhs.priority {
             layoutConstraint.priority = priority
         }
