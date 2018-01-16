@@ -37,7 +37,7 @@ public extension QueenBee {
 }
 
 public class CenterBee: Formation {
-    public typealias ConstraintSet = (x: LayoutConstraint, y: LayoutConstraint)
+    public typealias ConstraintsType = (x: LayoutConstraint, y: LayoutConstraint)
     
     let x: Pollen
     let y: Pollen

@@ -39,7 +39,7 @@ public extension QueenBee {
 
 public class SizeBee: Formation {
     
-    public typealias ConstraintSet = (width: LayoutConstraint, height: LayoutConstraint)
+    public typealias ConstraintsType = (width: LayoutConstraint, height: LayoutConstraint)
     
     let width: Pollen
     let height: Pollen

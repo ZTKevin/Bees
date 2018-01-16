@@ -68,28 +68,35 @@ public extension LayoutGuide {
     }
 }
 
+public protocol ConstraintSet {
+    
+    func install()
+
+    func uninstall()
+}
+
 
 public protocol Formation {
-    associatedtype ConstraintSet
+    associatedtype ConstraintsType
     
-    static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> ConstraintSet
+    static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> ConstraintsType
     
     static func prioritize(lhs: Self, rhs: LayoutPriority)
 }
 
 public extension Formation {
     @discardableResult
-    public static func >=(lhs: Self, rhs: Self) -> ConstraintSet {
+    public static func >=(lhs: Self, rhs: Self) -> ConstraintsType {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
     }
     
     @discardableResult
-    public static func <=(lhs: Self, rhs: Self) -> ConstraintSet {
+    public static func <=(lhs: Self, rhs: Self) -> ConstraintsType {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
     }
     
     @discardableResult
-    public static func ==(lhs: Self, rhs: Self) -> ConstraintSet {
+    public static func ==(lhs: Self, rhs: Self) -> ConstraintsType {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .equal)
     }
     

@@ -41,7 +41,7 @@ public extension QueenBee {
 }
 
 public class EdgeBee: Formation {
-    public typealias ConstraintSet =   (top: LayoutConstraint,
+    public typealias ConstraintsType =   (top: LayoutConstraint,
                                         left: LayoutConstraint,
                                         bottom: LayoutConstraint,
                                         right: LayoutConstraint)

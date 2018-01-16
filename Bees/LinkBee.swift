@@ -59,7 +59,7 @@ public class LinkBee {
     }
 }
 
-public extension Formation where Self: LinkBee, ConstraintSet == LinkConstraintSet {
+public extension Formation where Self: LinkBee, ConstraintsType == LinkConstraintSet {
     public func prioritize(_ priority: LayoutPriority) -> Self {
         self.pollen.prioritize(priority)
         return self
@@ -115,15 +115,15 @@ public extension Formation where Self: LinkBee, ConstraintSet == LinkConstraintS
 
 
 public class YAxisLinkBee<Left>: LinkBee, Formation {
-    public typealias ConstraintSet = LinkConstraintSet
+    public typealias ConstraintsType = LinkConstraintSet
 }
 
 public class XAxisLinkBee<Left>: LinkBee, Formation {
-    public typealias ConstraintSet = LinkConstraintSet
+    public typealias ConstraintsType = LinkConstraintSet
 }
 
 public class DimensionLinkBee<Left>: LinkBee, Formation {
-    public typealias ConstraintSet = LinkConstraintSet
+    public typealias ConstraintsType = LinkConstraintSet
 }
 
 private func makeConstraints(lhs: DimensionLinkBee<QueenBee>, rhs: CGFloat, relation: LayoutRelation) -> LinkConstraintSet {
