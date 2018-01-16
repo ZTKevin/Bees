@@ -70,9 +70,9 @@ public extension LayoutGuide {
 
 public protocol ConstraintSet {
     
-    func install()
+    func activate()
 
-    func uninstall()
+    func deactivate()
 }
 
 

@@ -31,8 +31,8 @@
     import UIKit
 #endif
 
-public struct LinkConstraintSet {
-    
+public struct LinkConstraintSet: ConstraintSet {
+
     private var constraints = [LayoutConstraint]()
 
     public subscript(index: Int) -> LayoutConstraint {
@@ -41,6 +41,14 @@ public struct LinkConstraintSet {
     
     fileprivate mutating func append(_ constraint: LayoutConstraint) {
         self.constraints.append(constraint)
+    }
+    
+    public func activate() {
+        LayoutConstraint.activate(constraints)
+    }
+    
+    public func deactivate() {
+        LayoutConstraint.deactivate(constraints)
     }
 }
 
