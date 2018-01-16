@@ -37,22 +37,39 @@ public extension QueenBee {
     }
 }
 
+public struct SizeConstraintSet: ConstraintSet {
+    public let width: LayoutConstraint
+    public let height: LayoutConstraint
+    
+    public func activate() {
+        width.isActive = true
+        height.isActive = true
+    }
+    
+    public func deactivate() {
+        width.isActive = false
+        height.isActive = false
+    }
+    
+}
+
+
 public class SizeBee: Formation {
     
-    public typealias ConstraintsType = (width: LayoutConstraint, height: LayoutConstraint)
+    public typealias ConstraintsType = SizeConstraintSet
     
-    let width: Pollen
-    let height: Pollen
+    private let width: Pollen
+    private let height: Pollen
 
     init(queenBee: QueenBee) {
         self.width = Pollen(attribute: .width, bee: queenBee)
         self.height = Pollen(attribute: .height, bee: queenBee)
     }
     
-    public static func makeConstraints(lhs: SizeBee, rhs: SizeBee, relation: LayoutRelation) -> (width: LayoutConstraint, height: LayoutConstraint) {
+    public static func makeConstraints(lhs: SizeBee, rhs: SizeBee, relation: LayoutRelation) -> SizeConstraintSet {
         let widthConstraint = Pollen.makeConstraint(lhs: lhs.width, rhs: rhs.width, relation: relation)
         let heightConstraint = Pollen.makeConstraint(lhs: lhs.height, rhs: rhs.height, relation: relation)
-        return (width: widthConstraint, height: heightConstraint)
+        return SizeConstraintSet(width: widthConstraint, height: heightConstraint)
     }
     
     public static func prioritize(lhs: SizeBee, rhs: LayoutPriority) {
@@ -60,24 +77,24 @@ public class SizeBee: Formation {
         lhs.height.prioritize(rhs)
     }
     
-    private static func makeConstraints(lhs: SizeBee, rhs: CGSize, relation: LayoutRelation) -> (width: LayoutConstraint, height: LayoutConstraint) {
+    private static func makeConstraints(lhs: SizeBee, rhs: CGSize, relation: LayoutRelation) -> SizeConstraintSet {
         let widthConstraint = Pollen.makeConstraint(lhs: lhs.width, rhs: rhs.width, relation: relation)
         let heightConstraint = Pollen.makeConstraint(lhs: lhs.height, rhs: rhs.height, relation: relation)
-        return (width: widthConstraint, height: heightConstraint)
+        return SizeConstraintSet(width: widthConstraint, height: heightConstraint)
     }
     
     @discardableResult
-    public static func ==(lhs: SizeBee, rhs: CGSize) -> (width: LayoutConstraint, height: LayoutConstraint) {
+    public static func ==(lhs: SizeBee, rhs: CGSize) -> SizeConstraintSet {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .equal)
     }
     
     @discardableResult
-    public static func >=(lhs: SizeBee, rhs: CGSize) -> (width: LayoutConstraint, height: LayoutConstraint) {
+    public static func >=(lhs: SizeBee, rhs: CGSize) -> SizeConstraintSet {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
     }
     
     @discardableResult
-    public static func <=(lhs: SizeBee, rhs: CGSize) -> (width: LayoutConstraint, height: LayoutConstraint) {
+    public static func <=(lhs: SizeBee, rhs: CGSize) -> SizeConstraintSet {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
     }
     
