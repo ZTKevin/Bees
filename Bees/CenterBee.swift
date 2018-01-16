@@ -63,6 +63,12 @@ public class CenterBee: Formation {
         self.y = Pollen(attribute: .centerY, bee: queenBee)
     }
     
+    public func offset(horizontal: CGFloat = 0, vertical: CGFloat = 0) -> CenterBee {
+        self.x.add(horizontal)
+        self.y.add(vertical)
+        return self
+    }
+    
     public static func makeConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> CenterConstraintSet {
         let xConstraint = Pollen.makeConstraint(lhs: lhs.x, rhs: rhs.x, relation: relation)
         let yConstraint = Pollen.makeConstraint(lhs: lhs.y, rhs: rhs.y, relation: relation)
@@ -75,4 +81,12 @@ public class CenterBee: Formation {
     }
     
 }
+
+#if !os(macOS)
+    public extension CenterBee {
+        public func offset(_ offset: UIOffset) -> CenterBee {
+            return self.offset(horizontal: offset.horizontal, vertical: offset.vertical)
+        }
+    }
+#endif
 

@@ -66,6 +66,18 @@ public class SizeBee: Formation {
         self.height = Pollen(attribute: .height, bee: queenBee)
     }
     
+    public func mul(width: CGFloat = 1, height: CGFloat = 1) -> SizeBee {
+        self.width.mul(width)
+        self.height.mul(height)
+        return self
+    }
+    
+    public func add(width: CGFloat = 0, height: CGFloat = 0) -> SizeBee {
+        self.width.add(width)
+        self.height.add(height)
+        return self
+    }
+    
     public static func makeConstraints(lhs: SizeBee, rhs: SizeBee, relation: LayoutRelation) -> SizeConstraintSet {
         let widthConstraint = Pollen.makeConstraint(lhs: lhs.width, rhs: rhs.width, relation: relation)
         let heightConstraint = Pollen.makeConstraint(lhs: lhs.height, rhs: rhs.height, relation: relation)
