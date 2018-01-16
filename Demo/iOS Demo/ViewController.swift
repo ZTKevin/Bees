@@ -31,6 +31,7 @@ import Bees
 class ViewController: UIViewController {
     @IBOutlet var superView: UIView!
     @IBOutlet weak var centerView: UIView!
+    @IBOutlet weak var centerSubView: UIView!
     
     @IBOutlet weak var leftTopView: UIView!
     @IBOutlet weak var rightTopView: UIView!
@@ -49,6 +50,9 @@ class ViewController: UIViewController {
         
         let centerViewWidthConstraint = sizeConstraints.width
         let centerViewHeightConstraint = sizeConstraints.height
+        
+        centerSubView.bee.edge == centerView.bee.edge.inset(top: 10, left: 10, bottom: 10, right: 10)
+        
 
         leftTopView.bee.left.top == superView.bee.left.add(10).top.add(10)
         leftTopView.bee.right == centerView.bee.left.sub(10)

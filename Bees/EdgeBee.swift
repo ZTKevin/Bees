@@ -26,9 +26,13 @@
 
 #if os(macOS)
     import AppKit
+    public typealias EdgeInsets = NSEdgeInsets
 #else
     import UIKit
+    public typealias EdgeInsets = UIEdgeInsets
 #endif
+
+
 
 public extension QueenBee {
     public var edge: EdgeBee {
@@ -53,6 +57,18 @@ public class EdgeBee: Formation {
         self.top = Pollen(attribute: .top, bee: queenBee)
         self.right = Pollen(attribute: .right, bee: queenBee)
         self.bottom = Pollen(attribute: .bottom, bee: queenBee)
+    }
+    
+    public func inset(_ insets: EdgeInsets) -> EdgeBee {
+        return self.inset(top: insets.top, left: insets.left, bottom: insets.bottom, right: insets.right)
+    }
+    
+    public func inset(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> EdgeBee {
+        self.left.add(left)
+        self.top.add(top)
+        self.bottom.sub(bottom)
+        self.right.sub(right)
+        return self
     }
     
     public static func makeConstraints(lhs: EdgeBee, rhs: EdgeBee, relation: LayoutRelation) -> (top: LayoutConstraint, left: LayoutConstraint, bottom: LayoutConstraint, right: LayoutConstraint) {
