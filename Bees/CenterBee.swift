@@ -36,21 +36,37 @@ public extension QueenBee {
     }
 }
 
-public class CenterBee: Formation {
-    public typealias ConstraintsType = (x: LayoutConstraint, y: LayoutConstraint)
+public struct CenterConstraintSet: ConstraintSet {
+    public let x: LayoutConstraint
+    public let y: LayoutConstraint
     
-    let x: Pollen
-    let y: Pollen
+    public func activate() {
+        x.isActive = true
+        y.isActive = true
+    }
+    
+    public func deactivate() {
+        x.isActive = false
+        y.isActive = false
+    }
+    
+}
+
+public class CenterBee: Formation {
+    public typealias ConstraintsType = CenterConstraintSet
+    
+    private let x: Pollen
+    private let y: Pollen
 
     init(queenBee: QueenBee) {
         self.x = Pollen(attribute: .centerX, bee: queenBee)
         self.y = Pollen(attribute: .centerY, bee: queenBee)
     }
     
-    public static func makeConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> (x: LayoutConstraint, y: LayoutConstraint) {
+    public static func makeConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> CenterConstraintSet {
         let xConstraint = Pollen.makeConstraint(lhs: lhs.x, rhs: rhs.x, relation: relation)
         let yConstraint = Pollen.makeConstraint(lhs: lhs.y, rhs: rhs.y, relation: relation)
-        return (x: xConstraint, y: yConstraint)
+        return CenterConstraintSet(x: xConstraint, y: yConstraint)
     }
     
     public static func prioritize(lhs: CenterBee, rhs: LayoutPriority) {
