@@ -25,9 +25,9 @@
 		181DA5D2200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
 		181DA5D3200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
 		181DA5D4200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
-		181DA5D6200C4BEC0069A8F2 /* EdgeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */; };
-		181DA5D7200C4BEC0069A8F2 /* EdgeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */; };
-		181DA5D8200C4BEC0069A8F2 /* EdgeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */; };
+		181DA5D6200C4BEC0069A8F2 /* EdgesBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */; };
+		181DA5D7200C4BEC0069A8F2 /* EdgesBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */; };
+		181DA5D8200C4BEC0069A8F2 /* EdgesBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */; };
 		187D5E5D1FC7C607005986AD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
 		187D5E601FC7F48F005986AD /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		187D5E611FC7F48F005986AD /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -125,7 +125,7 @@
 		181DA5C420070B800069A8F2 /* LinkBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBee.swift; sourceTree = "<group>"; };
 		181DA5C8200746AF0069A8F2 /* SizeBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeBee.swift; sourceTree = "<group>"; };
 		181DA5D1200C49480069A8F2 /* CenterBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBee.swift; sourceTree = "<group>"; };
-		181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBee.swift; sourceTree = "<group>"; };
+		181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesBee.swift; sourceTree = "<group>"; };
 		187D5E5C1FC7C607005986AD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		18EB4D201FD68D5C00843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB4D2D1FD68DA000843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,7 +226,7 @@
 				181DA5C420070B800069A8F2 /* LinkBee.swift */,
 				181DA5C8200746AF0069A8F2 /* SizeBee.swift */,
 				181DA5D1200C49480069A8F2 /* CenterBee.swift */,
-				181DA5D5200C4BEC0069A8F2 /* EdgeBee.swift */,
+				181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */,
 			);
 			path = Bees;
 			sourceTree = "<group>";
@@ -539,7 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187D5E5D1FC7C607005986AD /* Bee.swift in Sources */,
-				181DA5D6200C4BEC0069A8F2 /* EdgeBee.swift in Sources */,
+				181DA5D6200C4BEC0069A8F2 /* EdgesBee.swift in Sources */,
 				181DA5C520070B800069A8F2 /* LinkBee.swift in Sources */,
 				181DA5C1200707910069A8F2 /* Pollen.swift in Sources */,
 				181DA5C9200746AF0069A8F2 /* SizeBee.swift in Sources */,
@@ -561,7 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EB4D4A1FD68EBE00843A49 /* Bee.swift in Sources */,
-				181DA5D7200C4BEC0069A8F2 /* EdgeBee.swift in Sources */,
+				181DA5D7200C4BEC0069A8F2 /* EdgesBee.swift in Sources */,
 				181DA5C620070B800069A8F2 /* LinkBee.swift in Sources */,
 				181DA5C2200707910069A8F2 /* Pollen.swift in Sources */,
 				181DA5CA200746AF0069A8F2 /* SizeBee.swift in Sources */,
@@ -574,7 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EB4D6E1FD6954E00843A49 /* Bee.swift in Sources */,
-				181DA5D8200C4BEC0069A8F2 /* EdgeBee.swift in Sources */,
+				181DA5D8200C4BEC0069A8F2 /* EdgesBee.swift in Sources */,
 				181DA5C720070B800069A8F2 /* LinkBee.swift in Sources */,
 				181DA5C3200707910069A8F2 /* Pollen.swift in Sources */,
 				181DA5CB200746AF0069A8F2 /* SizeBee.swift in Sources */,

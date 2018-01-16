@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         let centerViewWidthConstraint = sizeConstraints.width
         let centerViewHeightConstraint = sizeConstraints.height
         
-        centerSubView.bee.edge == centerView.bee.edge.inset(top: 10, left: 10, bottom: 10, right: 10)
+        centerSubView.bee.edges == centerView.bee.edges.inset(top: 10, left: 10, bottom: 10, right: 10)
         
 
         leftTopView.bee.left.top == superView.bee.left.add(10).top.add(10)

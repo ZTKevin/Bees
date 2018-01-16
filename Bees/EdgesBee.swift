@@ -1,5 +1,5 @@
 //
-//  EdgeBee.swift
+//  EdgesBee.swift
 //  Bees
 //
 //  Created by hongcaiyu on 15/1/18.
@@ -32,25 +32,40 @@
     public typealias EdgeInsets = UIEdgeInsets
 #endif
 
-
-
 public extension QueenBee {
-    public var edge: EdgeBee {
-        return EdgeBee(queenBee: self)
+    public var edges: EdgesBee {
+        return EdgesBee(queenBee: self)
     }
 }
 
-public class EdgeBee: Formation {
-    public typealias ConstraintsType =   (top: LayoutConstraint,
-                                        left: LayoutConstraint,
-                                        bottom: LayoutConstraint,
-                                        right: LayoutConstraint)
+public struct EdgesConstraintSet: ConstraintSet {
+    public let top: LayoutConstraint
+    public let left: LayoutConstraint
+    public let bottom: LayoutConstraint
+    public let right: LayoutConstraint
     
+    public func activate() {
+        top.isActive = true
+        left.isActive = true
+        bottom.isActive = true
+        right.isActive = true
+    }
     
-    let left: Pollen
-    let top: Pollen
-    let right: Pollen
-    let bottom: Pollen
+    public func deactivate() {
+        top.isActive = false
+        left.isActive = false
+        bottom.isActive = false
+        right.isActive = false
+    }
+}
+
+public class EdgesBee: Formation {
+    public typealias ConstraintsType = EdgesConstraintSet
+    
+    private let left: Pollen
+    private let top: Pollen
+    private let right: Pollen
+    private let bottom: Pollen
 
     init(queenBee: QueenBee) {
         self.left = Pollen(attribute: .left, bee: queenBee)
@@ -59,11 +74,11 @@ public class EdgeBee: Formation {
         self.bottom = Pollen(attribute: .bottom, bee: queenBee)
     }
     
-    public func inset(_ insets: EdgeInsets) -> EdgeBee {
+    public func inset(_ insets: EdgeInsets) -> EdgesBee {
         return self.inset(top: insets.top, left: insets.left, bottom: insets.bottom, right: insets.right)
     }
     
-    public func inset(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> EdgeBee {
+    public func inset(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> EdgesBee {
         self.left.add(left)
         self.top.add(top)
         self.bottom.sub(bottom)
@@ -71,18 +86,15 @@ public class EdgeBee: Formation {
         return self
     }
     
-    public static func makeConstraints(lhs: EdgeBee, rhs: EdgeBee, relation: LayoutRelation) -> (top: LayoutConstraint, left: LayoutConstraint, bottom: LayoutConstraint, right: LayoutConstraint) {
+    public static func makeConstraints(lhs: EdgesBee, rhs: EdgesBee, relation: LayoutRelation) -> EdgesConstraintSet {
         let top = Pollen.makeConstraint(lhs: lhs.top, rhs: rhs.top, relation: relation)
         let left = Pollen.makeConstraint(lhs: lhs.left, rhs: rhs.left, relation: relation)
         let bottom = Pollen.makeConstraint(lhs: lhs.bottom, rhs: rhs.bottom, relation: relation)
         let right = Pollen.makeConstraint(lhs: lhs.right, rhs: rhs.right, relation: relation)
-        return (top: top,
-                left: left,
-                bottom: bottom,
-                right: right)
+        return EdgesConstraintSet(top: top, left: left, bottom: bottom, right: right)
     }
     
-    public static func prioritize(lhs: EdgeBee, rhs: LayoutPriority) {
+    public static func prioritize(lhs: EdgesBee, rhs: LayoutPriority) {
         lhs.top.prioritize(rhs)
         lhs.left.prioritize(rhs)
         lhs.bottom.prioritize(rhs)

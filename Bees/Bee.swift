@@ -76,7 +76,7 @@ public protocol ConstraintSet {
 }
 
 
-public protocol Formation {
+public protocol Formation where ConstraintsType: ConstraintSet {
     associatedtype ConstraintsType
     
     static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> ConstraintsType
