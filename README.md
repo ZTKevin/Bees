@@ -16,11 +16,13 @@ Bees 是一个简单易用的自动布局库，复杂的布局只需要几句简
 如：
 ```swift
 
-view1.bee.size == CGSize(width: 111, height: 111)
+view0.bee.size == CGSize(width: 111, height: 111)
 
 view1.bee.center == superView.bee.center
 
-view3.bee.right.bottom == superView.bee.right.bottom.sub(10)
+view2.bee.right.bottom == superView.bee.right.bottom.sub(10)
+
+view3.bee.edges == superView.bee.edges.inset(10)
 
 ...
 
@@ -59,31 +61,33 @@ view3.bee.right.bottom == superView.bee.right.bottom.sub(10)
 
 ## 使用
 ### 快速上手
-创建约束
+
 ```swift
-view1.bee.left == view2.bee.left //view1的左边等于view2的左边。
-view1.bee.left >= view2.bee.left //view1的左边大于等于view2的左边。
-view1.bee.width <= view2.bee.width //view1的宽度小于等于view2的宽度。
-view1.bee.width == 100 //view1的宽度=100
+import UIKit
+import Bees
+
+class ViewController: UIViewController {
+    
+    lazy var redView = UIView()
+    lazy var blueView = UIView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.addSubview(redView)
+        self.view.addSubview(blueView)
+        
+        redView.bee.edges == self.view.bee.edges.inset(top: 10, bottom: 10)
+        blueView.bee.size == redView.bee.size.mul(0.5)
+        blueView.bee.left.top == redView.bee.left.add(10).top.add(10)
+        
+    }
+
+}
+
 ```
 
-同时创建多个约束
-```swift
-view1.bee.width.height == (100, 200) //view1的宽度=100,高度=200
-view1.bee.left.top == view2.bee.left.top //view1的左边等于view2的左边，view1的上边等于view2的上边。
-```
-
-约束的调整
-```swift
-view1.bee.width == view2.bee.width.mul(2) //view1的宽度等于view2的宽度 * 2。
-view1.bee.width.mul(2) == view2.bee.width //view1的宽度等于view2的宽度 / 2。
-view1.bee.width == view2.bee.width.div(2) //view1的宽度等于view2的宽度 / 2。
-view1.bee.width.div(2) == view2.bee.width //view1的宽度等于view2的宽度 * 2。
-
-//类似的
-view1.bee.width == view2.bee.width.add(100) //view1的宽度等于view2的宽度 + 100。
-```
-### 完整的使用文档在：[使用指南](https://github.com/hongcaiyu/Bees/wiki)
+### [使用文档](https://github.com/hongcaiyu/Bees/wiki)
 
 
 ## License
