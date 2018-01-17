@@ -87,7 +87,7 @@ class ViewController: UIViewController {
 
 ```
 
-### [使用文档](https://github.com/hongcaiyu/Bees/wiki)
+### [使用文档](https://github.com/hongcaiyu/Bees/wiki/使用文档)
 
 
 ## License
