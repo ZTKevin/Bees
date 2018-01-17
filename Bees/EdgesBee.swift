@@ -78,6 +78,10 @@ public class EdgesBee: Formation {
         return self.inset(top: insets.top, left: insets.left, bottom: insets.bottom, right: insets.right)
     }
     
+    public func inset(_ constant: CGFloat) -> EdgesBee {
+        return self.inset(top: constant, left: constant, bottom: constant, right: constant)
+    }
+    
     public func inset(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> EdgesBee {
         self.left.add(left)
         self.top.add(top)

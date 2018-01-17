@@ -77,27 +77,8 @@ public class Pollen {
         self.priority = priority
     }
     
-    private static func openAutoLayoutIfNeed(lhs: QueenBee, rhs: QueenBee) {
-        guard let view1 = lhs.target as? View else {
-            (rhs.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
-            return
-        }
-        guard let view2 = rhs.target as? View else {
-            (lhs.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
-            return
-        }
-        if view1.superview == view2 {
-            view1.translatesAutoresizingMaskIntoConstraints = false
-        } else if view2.superview == view1 {
-            view2.translatesAutoresizingMaskIntoConstraints = false
-        } else {
-            view1.translatesAutoresizingMaskIntoConstraints = false
-            view2.translatesAutoresizingMaskIntoConstraints = false
-        }
-    }
-    
     static func makeConstraint(lhs: Pollen, rhs: Pollen, relation: LayoutRelation) -> LayoutConstraint {
-        self.openAutoLayoutIfNeed(lhs: lhs.bee, rhs: rhs.bee)
+        (lhs.bee.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
         let multiplier = rhs.multiplier / lhs.multiplier
         let constant = rhs.constant - lhs.constant
         

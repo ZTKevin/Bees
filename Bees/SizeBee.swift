@@ -72,10 +72,18 @@ public class SizeBee: Formation {
         return self
     }
     
+    public func mul(_ multiplier: CGFloat) -> SizeBee {
+        return mul(width: multiplier, height: multiplier)
+    }
+    
     public func add(width: CGFloat = 0, height: CGFloat = 0) -> SizeBee {
         self.width.add(width)
         self.height.add(height)
         return self
+    }
+    
+    public func add(_ constant: CGFloat) -> SizeBee {
+        return self.add(width: constant, height: constant)
     }
     
     public static func makeConstraints(lhs: SizeBee, rhs: SizeBee, relation: LayoutRelation) -> SizeConstraintSet {
