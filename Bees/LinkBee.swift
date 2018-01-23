@@ -35,12 +35,15 @@ public struct LinkConstraintSet: ConstraintSet {
 
     private var constraints = [LayoutConstraint]()
 
-    public subscript(index: Int) -> LayoutConstraint {
-        return constraints[index]
-    }
-    
     fileprivate mutating func append(_ constraint: LayoutConstraint) {
         self.constraints.append(constraint)
+    }
+    
+    private func constraintAt(index: Int) -> LayoutConstraint? {
+        if constraints.count > index {
+            return constraints[index]
+        }
+        return nil
     }
     
     public func activate() {
@@ -51,13 +54,30 @@ public struct LinkConstraintSet: ConstraintSet {
         LayoutConstraint.deactivate(constraints)
     }
     
+    public subscript(index: Int) -> LayoutConstraint {
+        return constraints[index]
+    }
+    
     public var count: Int {
         return constraints.count
     }
     
     public var first: LayoutConstraint? {
-        return constraints.first
+        return constraintAt(index: 0)
     }
+    
+    public var second: LayoutConstraint? {
+        return constraintAt(index: 1)
+    }
+
+    public var third: LayoutConstraint? {
+        return constraintAt(index: 2)
+    }
+    
+    public var fourth: LayoutConstraint? {
+        return constraintAt(index: 3)
+    }
+
 }
 
 public class LinkBee {
