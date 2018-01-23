@@ -50,6 +50,14 @@ public struct LinkConstraintSet: ConstraintSet {
     public func deactivate() {
         LayoutConstraint.deactivate(constraints)
     }
+    
+    public var count: Int {
+        return constraints.count
+    }
+    
+    public var first: LayoutConstraint? {
+        return constraints.first
+    }
 }
 
 public class LinkBee {
