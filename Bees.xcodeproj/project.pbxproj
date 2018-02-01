@@ -31,6 +31,8 @@
 		187D5E5D1FC7C607005986AD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
 		187D5E601FC7F48F005986AD /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		187D5E611FC7F48F005986AD /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18A88E772023218600C90E6A /* LinkBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A88E762023218600C90E6A /* LinkBeeTests.swift */; };
+		18A88E792023218600C90E6A /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		18EB4D3D1FD68E5B00843A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D3C1FD68E5B00843A49 /* AppDelegate.swift */; };
 		18EB4D3F1FD68E5B00843A49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D3E1FD68E5B00843A49 /* ViewController.swift */; };
 		18EB4D421FD68E5B00843A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EB4D401FD68E5B00843A49 /* Main.storyboard */; };
@@ -57,6 +59,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 18060AE01FC7C25B006559CE;
 			remoteInfo = Bees;
+		};
+		18A88E7A2023218600C90E6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18060AE01FC7C25B006559CE;
+			remoteInfo = "Bees-iOS";
 		};
 		18EB4D4F1FD68F8F00843A49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -127,6 +136,9 @@
 		181DA5D1200C49480069A8F2 /* CenterBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBee.swift; sourceTree = "<group>"; };
 		181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesBee.swift; sourceTree = "<group>"; };
 		187D5E5C1FC7C607005986AD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		18A88E742023218600C90E6A /* BeesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A88E762023218600C90E6A /* LinkBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBeeTests.swift; sourceTree = "<group>"; };
+		18A88E782023218600C90E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18EB4D201FD68D5C00843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB4D2D1FD68DA000843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB4D3A1FD68E5A00843A49 /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +170,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				187D5E601FC7F48F005986AD /* Bees.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A88E712023218600C90E6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A88E792023218600C90E6A /* Bees.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +219,7 @@
 			children = (
 				18EB4D351FD68DF600843A49 /* Demo */,
 				18060AE31FC7C25B006559CE /* Bees */,
+				18A88E6F2023217400C90E6A /* Test */,
 				18060AE21FC7C25B006559CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -212,6 +233,7 @@
 				18EB4D2D1FD68DA000843A49 /* Bees.framework */,
 				18EB4D3A1FD68E5A00843A49 /* tvOS Demo.app */,
 				18EB4D561FD690D500843A49 /* macOS Demo.app */,
+				18A88E742023218600C90E6A /* BeesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +264,23 @@
 				18060AFE1FC7C38E006559CE /* Info.plist */,
 			);
 			path = "iOS Demo";
+			sourceTree = "<group>";
+		};
+		18A88E6F2023217400C90E6A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				18A88E752023218600C90E6A /* BeesTests */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		18A88E752023218600C90E6A /* BeesTests */ = {
+			isa = PBXGroup;
+			children = (
+				18A88E762023218600C90E6A /* LinkBeeTests.swift */,
+				18A88E782023218600C90E6A /* Info.plist */,
+			);
+			path = BeesTests;
 			sourceTree = "<group>";
 		};
 		18EB4D351FD68DF600843A49 /* Demo */ = {
@@ -347,6 +386,24 @@
 			productReference = 18060AF01FC7C38D006559CE /* iOS Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		18A88E732023218600C90E6A /* BeesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18A88E7C2023218600C90E6A /* Build configuration list for PBXNativeTarget "BeesTests" */;
+			buildPhases = (
+				18A88E702023218600C90E6A /* Sources */,
+				18A88E712023218600C90E6A /* Frameworks */,
+				18A88E722023218600C90E6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18A88E7B2023218600C90E6A /* PBXTargetDependency */,
+			);
+			name = BeesTests;
+			productName = BeesTests;
+			productReference = 18A88E742023218600C90E6A /* BeesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		18EB4D1F1FD68D5C00843A49 /* Bees-tvOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18EB4D251FD68D5C00843A49 /* Build configuration list for PBXNativeTarget "Bees-tvOS" */;
@@ -427,7 +484,7 @@
 		18060AD81FC7C25B006559CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Lion;
 				TargetAttributes = {
@@ -438,6 +495,10 @@
 					};
 					18060AEF1FC7C38D006559CE = {
 						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					18A88E732023218600C90E6A = {
+						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 					18EB4D1F1FD68D5C00843A49 = {
@@ -477,6 +538,7 @@
 				18060AEF1FC7C38D006559CE /* iOS Demo */,
 				18EB4D391FD68E5A00843A49 /* tvOS Demo */,
 				18EB4D551FD690D500843A49 /* macOS Demo */,
+				18A88E732023218600C90E6A /* BeesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,6 +558,13 @@
 				18060AFD1FC7C38E006559CE /* LaunchScreen.storyboard in Resources */,
 				18060AFA1FC7C38E006559CE /* Assets.xcassets in Resources */,
 				18060AF81FC7C38E006559CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A88E722023218600C90E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +625,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18A88E702023218600C90E6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A88E772023218600C90E6A /* LinkBeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18EB4D1B1FD68D5C00843A49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -608,6 +685,11 @@
 			isa = PBXTargetDependency;
 			target = 18060AE01FC7C25B006559CE /* Bees-iOS */;
 			targetProxy = 18060B021FC7C3F0006559CE /* PBXContainerItemProxy */;
+		};
+		18A88E7B2023218600C90E6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18060AE01FC7C25B006559CE /* Bees-iOS */;
+			targetProxy = 18A88E7A2023218600C90E6A /* PBXContainerItemProxy */;
 		};
 		18EB4D501FD68F8F00843A49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -847,6 +929,34 @@
 			};
 			name = Release;
 		};
+		18A88E7D2023218600C90E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Test/BeesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hongcaiyu.BeesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18A88E7E2023218600C90E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Test/BeesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hongcaiyu.BeesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		18EB4D261FD68D5C00843A49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1037,6 +1147,15 @@
 			buildConfigurations = (
 				18060AFF1FC7C38E006559CE /* Debug */,
 				18060B001FC7C38E006559CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18A88E7C2023218600C90E6A /* Build configuration list for PBXNativeTarget "BeesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A88E7D2023218600C90E6A /* Debug */,
+				18A88E7E2023218600C90E6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
