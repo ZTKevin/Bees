@@ -2,6 +2,7 @@
 
 <img src="/Assets/iOSDemo.gif" align="right" height="350px" hspace="0px" vspace="0px">
 
+[![Build Status](https://travis-ci.org/hongcaiyu/Bees.svg?branch=master)](https://travis-ci.org/hongcaiyu/Bees)
 [![Platform](https://img.shields.io/cocoapods/p/Bees.svg?style=flat)](https://github.com/hongcaiyu/Bees)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Bees.svg)](https://github.com/hongcaiyu/Bees)
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
