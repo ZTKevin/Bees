@@ -31,6 +31,19 @@
 		187D5E5D1FC7C607005986AD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
 		187D5E601FC7F48F005986AD /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		187D5E611FC7F48F005986AD /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1897B281202413C1006BFC8A /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D201FD68D5C00843A49 /* Bees.framework */; };
+		1897B28720241408006BFC8A /* LinkBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A88E762023218600C90E6A /* LinkBeeTests.swift */; };
+		1897B29120241443006BFC8A /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D2D1FD68DA000843A49 /* Bees.framework */; };
+		1897B29720241473006BFC8A /* LinkBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A88E762023218600C90E6A /* LinkBeeTests.swift */; };
+		1897B299202415C7006BFC8A /* SizeBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B298202415C7006BFC8A /* SizeBeeTests.swift */; };
+		1897B29A202415C7006BFC8A /* SizeBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B298202415C7006BFC8A /* SizeBeeTests.swift */; };
+		1897B29B202415C7006BFC8A /* SizeBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B298202415C7006BFC8A /* SizeBeeTests.swift */; };
+		1897B29D20241851006BFC8A /* CenterBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B29C20241851006BFC8A /* CenterBeeTests.swift */; };
+		1897B29E20241851006BFC8A /* CenterBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B29C20241851006BFC8A /* CenterBeeTests.swift */; };
+		1897B29F20241851006BFC8A /* CenterBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B29C20241851006BFC8A /* CenterBeeTests.swift */; };
+		1897B2A120243792006BFC8A /* EdgesBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B2A020243792006BFC8A /* EdgesBeeTests.swift */; };
+		1897B2A220243792006BFC8A /* EdgesBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B2A020243792006BFC8A /* EdgesBeeTests.swift */; };
+		1897B2A320243792006BFC8A /* EdgesBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B2A020243792006BFC8A /* EdgesBeeTests.swift */; };
 		18A88E772023218600C90E6A /* LinkBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A88E762023218600C90E6A /* LinkBeeTests.swift */; };
 		18A88E792023218600C90E6A /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		18EB4D3D1FD68E5B00843A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D3C1FD68E5B00843A49 /* AppDelegate.swift */; };
@@ -59,6 +72,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 18060AE01FC7C25B006559CE;
 			remoteInfo = Bees;
+		};
+		1897B282202413C1006BFC8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18EB4D1F1FD68D5C00843A49;
+			remoteInfo = "Bees-tvOS";
+		};
+		1897B29220241443006BFC8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18EB4D2C1FD68DA000843A49;
+			remoteInfo = "Bees-macOS";
 		};
 		18A88E7A2023218600C90E6A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -136,6 +163,13 @@
 		181DA5D1200C49480069A8F2 /* CenterBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBee.swift; sourceTree = "<group>"; };
 		181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesBee.swift; sourceTree = "<group>"; };
 		187D5E5C1FC7C607005986AD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		1897B27C202413C1006BFC8A /* BeesTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BeesTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1897B280202413C1006BFC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1897B28C20241443006BFC8A /* BeesTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BeesTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1897B29020241443006BFC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1897B298202415C7006BFC8A /* SizeBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeBeeTests.swift; sourceTree = "<group>"; };
+		1897B29C20241851006BFC8A /* CenterBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBeeTests.swift; sourceTree = "<group>"; };
+		1897B2A020243792006BFC8A /* EdgesBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesBeeTests.swift; sourceTree = "<group>"; };
 		18A88E742023218600C90E6A /* BeesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A88E762023218600C90E6A /* LinkBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBeeTests.swift; sourceTree = "<group>"; };
 		18A88E782023218600C90E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +204,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				187D5E601FC7F48F005986AD /* Bees.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1897B279202413C1006BFC8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1897B281202413C1006BFC8A /* Bees.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1897B28920241443006BFC8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1897B29120241443006BFC8A /* Bees.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +284,8 @@
 				18EB4D3A1FD68E5A00843A49 /* tvOS Demo.app */,
 				18EB4D561FD690D500843A49 /* macOS Demo.app */,
 				18A88E742023218600C90E6A /* BeesTests.xctest */,
+				1897B27C202413C1006BFC8A /* BeesTests-tvOS.xctest */,
+				1897B28C20241443006BFC8A /* BeesTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,10 +318,28 @@
 			path = "iOS Demo";
 			sourceTree = "<group>";
 		};
+		1897B27D202413C1006BFC8A /* BeesTests-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				1897B280202413C1006BFC8A /* Info.plist */,
+			);
+			path = "BeesTests-tvOS";
+			sourceTree = "<group>";
+		};
+		1897B28D20241443006BFC8A /* BeesTests-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				1897B29020241443006BFC8A /* Info.plist */,
+			);
+			path = "BeesTests-macOS";
+			sourceTree = "<group>";
+		};
 		18A88E6F2023217400C90E6A /* Test */ = {
 			isa = PBXGroup;
 			children = (
 				18A88E752023218600C90E6A /* BeesTests */,
+				1897B27D202413C1006BFC8A /* BeesTests-tvOS */,
+				1897B28D20241443006BFC8A /* BeesTests-macOS */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -277,8 +347,11 @@
 		18A88E752023218600C90E6A /* BeesTests */ = {
 			isa = PBXGroup;
 			children = (
-				18A88E762023218600C90E6A /* LinkBeeTests.swift */,
 				18A88E782023218600C90E6A /* Info.plist */,
+				18A88E762023218600C90E6A /* LinkBeeTests.swift */,
+				1897B298202415C7006BFC8A /* SizeBeeTests.swift */,
+				1897B29C20241851006BFC8A /* CenterBeeTests.swift */,
+				1897B2A020243792006BFC8A /* EdgesBeeTests.swift */,
 			);
 			path = BeesTests;
 			sourceTree = "<group>";
@@ -385,6 +458,42 @@
 			productName = "iOS Demo";
 			productReference = 18060AF01FC7C38D006559CE /* iOS Demo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1897B27B202413C1006BFC8A /* BeesTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1897B286202413C1006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-tvOS" */;
+			buildPhases = (
+				1897B278202413C1006BFC8A /* Sources */,
+				1897B279202413C1006BFC8A /* Frameworks */,
+				1897B27A202413C1006BFC8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1897B283202413C1006BFC8A /* PBXTargetDependency */,
+			);
+			name = "BeesTests-tvOS";
+			productName = "BeesTests-tvOS";
+			productReference = 1897B27C202413C1006BFC8A /* BeesTests-tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1897B28B20241443006BFC8A /* BeesTests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1897B29420241443006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-macOS" */;
+			buildPhases = (
+				1897B28820241443006BFC8A /* Sources */,
+				1897B28920241443006BFC8A /* Frameworks */,
+				1897B28A20241443006BFC8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1897B29320241443006BFC8A /* PBXTargetDependency */,
+			);
+			name = "BeesTests-macOS";
+			productName = "BeesTests-macOS";
+			productReference = 1897B28C20241443006BFC8A /* BeesTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		18A88E732023218600C90E6A /* BeesTests */ = {
 			isa = PBXNativeTarget;
@@ -497,6 +606,14 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
+					1897B27B202413C1006BFC8A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					1897B28B20241443006BFC8A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					18A88E732023218600C90E6A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -539,6 +656,8 @@
 				18EB4D391FD68E5A00843A49 /* tvOS Demo */,
 				18EB4D551FD690D500843A49 /* macOS Demo */,
 				18A88E732023218600C90E6A /* BeesTests */,
+				1897B27B202413C1006BFC8A /* BeesTests-tvOS */,
+				1897B28B20241443006BFC8A /* BeesTests-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -558,6 +677,20 @@
 				18060AFD1FC7C38E006559CE /* LaunchScreen.storyboard in Resources */,
 				18060AFA1FC7C38E006559CE /* Assets.xcassets in Resources */,
 				18060AF81FC7C38E006559CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1897B27A202413C1006BFC8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1897B28A20241443006BFC8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,11 +758,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1897B278202413C1006BFC8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1897B29E20241851006BFC8A /* CenterBeeTests.swift in Sources */,
+				1897B2A220243792006BFC8A /* EdgesBeeTests.swift in Sources */,
+				1897B28720241408006BFC8A /* LinkBeeTests.swift in Sources */,
+				1897B29A202415C7006BFC8A /* SizeBeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1897B28820241443006BFC8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1897B29F20241851006BFC8A /* CenterBeeTests.swift in Sources */,
+				1897B2A320243792006BFC8A /* EdgesBeeTests.swift in Sources */,
+				1897B29720241473006BFC8A /* LinkBeeTests.swift in Sources */,
+				1897B29B202415C7006BFC8A /* SizeBeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18A88E702023218600C90E6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1897B29D20241851006BFC8A /* CenterBeeTests.swift in Sources */,
+				1897B2A120243792006BFC8A /* EdgesBeeTests.swift in Sources */,
 				18A88E772023218600C90E6A /* LinkBeeTests.swift in Sources */,
+				1897B299202415C7006BFC8A /* SizeBeeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +843,16 @@
 			isa = PBXTargetDependency;
 			target = 18060AE01FC7C25B006559CE /* Bees-iOS */;
 			targetProxy = 18060B021FC7C3F0006559CE /* PBXContainerItemProxy */;
+		};
+		1897B283202413C1006BFC8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18EB4D1F1FD68D5C00843A49 /* Bees-tvOS */;
+			targetProxy = 1897B282202413C1006BFC8A /* PBXContainerItemProxy */;
+		};
+		1897B29320241443006BFC8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18EB4D2C1FD68DA000843A49 /* Bees-macOS */;
+			targetProxy = 1897B29220241443006BFC8A /* PBXContainerItemProxy */;
 		};
 		18A88E7B2023218600C90E6A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -929,6 +1097,68 @@
 			};
 			name = Release;
 		};
+		1897B284202413C1006BFC8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Test/BeesTests-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		1897B285202413C1006BFC8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Test/BeesTests-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		1897B29520241443006BFC8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Test/BeesTests-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1897B29620241443006BFC8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Test/BeesTests-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		18A88E7D2023218600C90E6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1147,6 +1377,24 @@
 			buildConfigurations = (
 				18060AFF1FC7C38E006559CE /* Debug */,
 				18060B001FC7C38E006559CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1897B286202413C1006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1897B284202413C1006BFC8A /* Debug */,
+				1897B285202413C1006BFC8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1897B29420241443006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1897B29520241443006BFC8A /* Debug */,
+				1897B29620241443006BFC8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
