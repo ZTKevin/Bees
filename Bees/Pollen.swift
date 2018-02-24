@@ -31,7 +31,7 @@
     import UIKit
 #endif
 
-public class Pollen {
+class Pollen {
     let attribute : LayoutAttribute
     
     let bee: QueenBee
