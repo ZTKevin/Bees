@@ -4,7 +4,7 @@
 //
 //  Created by hongcaiyu on 11/1/18.
 //
-//  Copyright (c) 2017 Caiyu Hong <hongcaiyu@live.com>
+//  Copyright (c) 2018 Caiyu Hong <hongcaiyu@live.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -304,3 +304,73 @@ public extension QueenBee {
         return YAxisLinkBee(left: self, attribute: .firstBaseline)
     }
 }
+
+#if !os(macOS)
+    public extension Formation where Self: LinkBee {
+        public var leftMargin: XAxisLinkBee<Self> {
+            return XAxisLinkBee(left: self, attribute: .leftMargin)
+        }
+        
+        public var rightMargin: XAxisLinkBee<Self> {
+            return XAxisLinkBee(left: self, attribute: .rightMargin)
+        }
+        
+        public var topMargin: YAxisLinkBee<Self> {
+            return YAxisLinkBee(left: self, attribute: .topMargin)
+        }
+        
+        public var bottomMargin: YAxisLinkBee<Self> {
+            return YAxisLinkBee(left: self, attribute: .bottomMargin)
+        }
+        
+        public var leadingMargin: XAxisLinkBee<Self> {
+            return XAxisLinkBee(left: self, attribute: .leadingMargin)
+        }
+        
+        public var trailingMargin: XAxisLinkBee<Self> {
+            return XAxisLinkBee(left: self, attribute: .trailingMargin)
+        }
+        
+        public var centerXWithinMargins: XAxisLinkBee<Self> {
+            return XAxisLinkBee(left: self, attribute: .centerXWithinMargins)
+        }
+        
+        public var centerYWithinMargins: YAxisLinkBee<Self> {
+            return YAxisLinkBee(left: self, attribute: .centerYWithinMargins)
+        }
+    }
+    
+    public extension QueenBee {
+        public var leftMargin: XAxisLinkBee<QueenBee> {
+            return XAxisLinkBee(left: self, attribute: .leftMargin)
+        }
+        
+        public var rightMargin: XAxisLinkBee<QueenBee> {
+            return XAxisLinkBee(left: self, attribute: .rightMargin)
+        }
+        
+        public var topMargin: YAxisLinkBee<QueenBee> {
+            return YAxisLinkBee(left: self, attribute: .topMargin)
+        }
+        
+        public var bottomMargin: YAxisLinkBee<QueenBee> {
+            return YAxisLinkBee(left: self, attribute: .bottomMargin)
+        }
+        
+        public var leadingMargin: XAxisLinkBee<QueenBee> {
+            return XAxisLinkBee(left: self, attribute: .leadingMargin)
+        }
+        
+        public var trailingMargin: XAxisLinkBee<QueenBee> {
+            return XAxisLinkBee(left: self, attribute: .trailingMargin)
+        }
+        
+        public var centerXWithinMargins: XAxisLinkBee<QueenBee> {
+            return XAxisLinkBee(left: self, attribute: .centerXWithinMargins)
+        }
+        
+        public var centerYWithinMargins: YAxisLinkBee<QueenBee> {
+            return YAxisLinkBee(left: self, attribute: .centerYWithinMargins)
+        }
+    }
+#endif
