@@ -4,7 +4,7 @@
 //
 //  Created by hongcaiyu on 24/11/17.
 //
-//  Copyright (c) 2017 Caiyu Hong <hongcaiyu@live.com>
+//  Copyright (c) 2018 Caiyu Hong <hongcaiyu@live.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +27,7 @@
 #if os(macOS)
     import AppKit
     public typealias View = NSView
+    @available(OSX 10.11, *)
     public typealias LayoutGuide = NSLayoutGuide
     public typealias LayoutConstraint = NSLayoutConstraint
     public typealias LayoutPriority = NSLayoutConstraint.Priority
@@ -35,6 +36,7 @@
 #else
     import UIKit
     public typealias View = UIView
+    @available(iOS 9.0, tvOS 9.0, *)
     public typealias LayoutGuide = UILayoutGuide
     public typealias LayoutConstraint = NSLayoutConstraint
     public typealias LayoutPriority = UILayoutPriority
@@ -62,6 +64,7 @@ public extension View {
     }
 }
 
+@available(iOS 9.0, tvOS 9.0, OSX 10.11, *)
 public extension LayoutGuide {
     public var bee: QueenBee {
         return QueenBee(target: self)

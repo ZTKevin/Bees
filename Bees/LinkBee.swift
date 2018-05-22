@@ -249,7 +249,8 @@ public extension Formation where Self: LinkBee {
     public var lastBaseline: YAxisLinkBee<Self> {
         return YAxisLinkBee(left: self, attribute: .lastBaseline)
     }
-
+    
+    @available(iOS 8.0, OSX 10.11, tvOS 8.0, *)
     public var firstBaseline: YAxisLinkBee<Self> {
         return YAxisLinkBee(left: self, attribute: .firstBaseline)
     }
@@ -299,13 +300,15 @@ public extension QueenBee {
     public var lastBaseline: YAxisLinkBee<QueenBee> {
         return YAxisLinkBee(left: self, attribute: .lastBaseline)
     }
-
+    
+    @available(iOS 8.0, OSX 10.11, tvOS 8.0, *)
     public var firstBaseline: YAxisLinkBee<QueenBee> {
         return YAxisLinkBee(left: self, attribute: .firstBaseline)
     }
 }
 
 #if !os(macOS)
+    @available(iOS 8.0, tvOS 8.0, *)
     public extension Formation where Self: LinkBee {
         public var leftMargin: XAxisLinkBee<Self> {
             return XAxisLinkBee(left: self, attribute: .leftMargin)
@@ -339,7 +342,8 @@ public extension QueenBee {
             return YAxisLinkBee(left: self, attribute: .centerYWithinMargins)
         }
     }
-    
+
+    @available(iOS 8.0, tvOS 8.0, *)
     public extension QueenBee {
         public var leftMargin: XAxisLinkBee<QueenBee> {
             return XAxisLinkBee(left: self, attribute: .leftMargin)
