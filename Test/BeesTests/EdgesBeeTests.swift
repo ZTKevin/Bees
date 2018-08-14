@@ -40,13 +40,13 @@ class EdgesBeeTests: XCTestCase {
         
         superview.addSubview(view)
         
-        view.bee.edges == superview.bee.edges.inset(top: 10, left: 20, bottom: 30, right: 40)
+        view.bee.edges == superview.bee.edges.inset(top: 10, left: 10, bottom: 10, right: 10)
         
         superview.layoutImmediately()
         
         var frame = superview.frame
-        frame.origin = CGPoint(x: 20, y: 10)
-        frame.size = CGSize(width: 1000 - 60, height: 1000 - 40)
+        frame.origin = CGPoint(x: 10, y: 10)
+        frame.size = CGSize(width: 1000 - 20, height: 1000 - 20)
 
         XCTAssert(view.frame == frame, "EdgesBeeTests.testEdgesInsert failed")
     }
