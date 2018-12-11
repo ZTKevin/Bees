@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18A88E732023218600C90E6A"
+               BuildableName = "BeesTests.xctest"
+               BlueprintName = "BeesTests"
+               ReferencedContainer = "container:Bees.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "18060AE01FC7C25B006559CE"
+            BuildableName = "Bees.framework"
+            BlueprintName = "Bees-iOS"
+            ReferencedContainer = "container:Bees.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
