@@ -96,37 +96,37 @@ public class LinkBee {
 }
 
 public extension Formation where Self: LinkBee, ConstraintsType == LinkConstraintSet {
-    public func prioritize(_ priority: LayoutPriority) -> Self {
+    func prioritize(_ priority: LayoutPriority) -> Self {
         self.pollen.prioritize(priority)
         return self
     }
     
-    public func prioritize(_ priority: Float) -> Self {
+    func prioritize(_ priority: Float) -> Self {
         return self.prioritize(LayoutPriority(priority))
     }
     
-    public func add(_ constant: CGFloat) -> Self {
+    func add(_ constant: CGFloat) -> Self {
         self.pollen.add(constant)
         return self
     }
     
-    public func sub(_ constant: CGFloat) -> Self {
+    func sub(_ constant: CGFloat) -> Self {
         self.pollen.sub(constant)
         return self
     }
     
-    public func mul(_ multiplier: CGFloat) -> Self {
+    func mul(_ multiplier: CGFloat) -> Self {
         self.pollen.mul(multiplier)
         return self
     }
     
-    public func div(_ divisor: CGFloat) -> Self {
+    func div(_ divisor: CGFloat) -> Self {
         self.pollen.div(divisor)
         return self
     }
     
     // MARK: Formation
-    public static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> LinkConstraintSet {
+    static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> LinkConstraintSet {
         var constraints = LinkConstraintSet()
         func makeConstraints(lhs: LinkBee, rhs: LinkBee) {
             if let left = lhs.leftBee, let right = rhs.leftBee {
@@ -140,7 +140,7 @@ public extension Formation where Self: LinkBee, ConstraintsType == LinkConstrain
         return constraints
     }
     
-    public static func prioritize(lhs: Self, rhs: LayoutPriority) {
+    static func prioritize(lhs: Self, rhs: LayoutPriority) {
         var bee: LinkBee? = lhs
         while let linkBee = bee {
             linkBee.pollen.prioritize(rhs)
@@ -206,103 +206,103 @@ public func <=(lhs: DimensionLinkBee<DimensionLinkBee<QueenBee>>, rhs: (CGFloat,
 }
 
 public extension Formation where Self: LinkBee {
-    public var left: XAxisLinkBee<Self> {
+    var left: XAxisLinkBee<Self> {
         return XAxisLinkBee(left: self, attribute: .left)
     }
 
-    public var right: XAxisLinkBee<Self> {
+    var right: XAxisLinkBee<Self> {
         return XAxisLinkBee(left: self, attribute: .right)
     }
 
-    public var top: YAxisLinkBee<Self> {
+    var top: YAxisLinkBee<Self> {
         return YAxisLinkBee(left: self, attribute: .top)
     }
 
-    public var bottom: YAxisLinkBee<Self> {
+    var bottom: YAxisLinkBee<Self> {
         return YAxisLinkBee(left: self, attribute: .bottom)
     }
 
-    public var leading: XAxisLinkBee<Self> {
+    var leading: XAxisLinkBee<Self> {
         return XAxisLinkBee(left: self, attribute: .leading)
     }
 
-    public var trailing: XAxisLinkBee<Self> {
+    var trailing: XAxisLinkBee<Self> {
         return XAxisLinkBee(left: self, attribute: .trailing)
     }
 
-    public var width: DimensionLinkBee<Self> {
+    var width: DimensionLinkBee<Self> {
         return DimensionLinkBee(left: self, attribute: .width)
     }
 
-    public var height: DimensionLinkBee<Self> {
+    var height: DimensionLinkBee<Self> {
         return DimensionLinkBee(left: self, attribute: .height)
     }
 
-    public var centerX: XAxisLinkBee<Self> {
+    var centerX: XAxisLinkBee<Self> {
         return XAxisLinkBee(left: self, attribute: .centerX)
     }
 
-    public var centerY: YAxisLinkBee<Self> {
+    var centerY: YAxisLinkBee<Self> {
         return YAxisLinkBee(left: self, attribute: .centerY)
     }
 
-    public var lastBaseline: YAxisLinkBee<Self> {
+    var lastBaseline: YAxisLinkBee<Self> {
         return YAxisLinkBee(left: self, attribute: .lastBaseline)
     }
     
     @available(iOS 8.0, OSX 10.11, tvOS 8.0, *)
-    public var firstBaseline: YAxisLinkBee<Self> {
+    var firstBaseline: YAxisLinkBee<Self> {
         return YAxisLinkBee(left: self, attribute: .firstBaseline)
     }
 }
 
 public extension QueenBee {
-    public var left: XAxisLinkBee<QueenBee> {
+    var left: XAxisLinkBee<QueenBee> {
         return XAxisLinkBee(left: self, attribute: .left)
     }
 
-    public var right: XAxisLinkBee<QueenBee> {
+    var right: XAxisLinkBee<QueenBee> {
         return XAxisLinkBee(left: self, attribute: .right)
     }
 
-    public var top: YAxisLinkBee<QueenBee> {
+    var top: YAxisLinkBee<QueenBee> {
         return YAxisLinkBee(left: self, attribute: .top)
     }
 
-    public var bottom: YAxisLinkBee<QueenBee> {
+    var bottom: YAxisLinkBee<QueenBee> {
         return YAxisLinkBee(left: self, attribute: .bottom)
     }
 
-    public var leading: XAxisLinkBee<QueenBee> {
+    var leading: XAxisLinkBee<QueenBee> {
         return XAxisLinkBee(left: self, attribute: .leading)
     }
 
-    public var trailing: XAxisLinkBee<QueenBee> {
+    var trailing: XAxisLinkBee<QueenBee> {
         return XAxisLinkBee(left: self, attribute: .trailing)
     }
 
-    public var width: DimensionLinkBee<QueenBee> {
+    var width: DimensionLinkBee<QueenBee> {
         return DimensionLinkBee(left: self, attribute: .width)
     }
 
-    public var height: DimensionLinkBee<QueenBee> {
+    var height: DimensionLinkBee<QueenBee> {
         return DimensionLinkBee(left: self, attribute: .height)
     }
 
-    public var centerX: XAxisLinkBee<QueenBee> {
+    var centerX: XAxisLinkBee<QueenBee> {
         return XAxisLinkBee(left: self, attribute: .centerX)
     }
 
-    public var centerY: YAxisLinkBee<QueenBee> {
+    var centerY: YAxisLinkBee<QueenBee> {
         return YAxisLinkBee(left: self, attribute: .centerY)
     }
 
-    public var lastBaseline: YAxisLinkBee<QueenBee> {
+    var lastBaseline: YAxisLinkBee<QueenBee> {
         return YAxisLinkBee(left: self, attribute: .lastBaseline)
     }
     
     @available(iOS 8.0, OSX 10.11, tvOS 8.0, *)
-    public var firstBaseline: YAxisLinkBee<QueenBee> {
+    var firstBaseline: YAxisLinkBee<QueenBee> {
         return YAxisLinkBee(left: self, attribute: .firstBaseline)
     }
 }
@@ -310,70 +310,70 @@ public extension QueenBee {
 #if !os(macOS)
     @available(iOS 8.0, tvOS 8.0, *)
     public extension Formation where Self: LinkBee {
-        public var leftMargin: XAxisLinkBee<Self> {
+        var leftMargin: XAxisLinkBee<Self> {
             return XAxisLinkBee(left: self, attribute: .leftMargin)
         }
         
-        public var rightMargin: XAxisLinkBee<Self> {
+        var rightMargin: XAxisLinkBee<Self> {
             return XAxisLinkBee(left: self, attribute: .rightMargin)
         }
         
-        public var topMargin: YAxisLinkBee<Self> {
+        var topMargin: YAxisLinkBee<Self> {
             return YAxisLinkBee(left: self, attribute: .topMargin)
         }
         
-        public var bottomMargin: YAxisLinkBee<Self> {
+        var bottomMargin: YAxisLinkBee<Self> {
             return YAxisLinkBee(left: self, attribute: .bottomMargin)
         }
         
-        public var leadingMargin: XAxisLinkBee<Self> {
+        var leadingMargin: XAxisLinkBee<Self> {
             return XAxisLinkBee(left: self, attribute: .leadingMargin)
         }
         
-        public var trailingMargin: XAxisLinkBee<Self> {
+        var trailingMargin: XAxisLinkBee<Self> {
             return XAxisLinkBee(left: self, attribute: .trailingMargin)
         }
         
-        public var centerXWithinMargins: XAxisLinkBee<Self> {
+        var centerXWithinMargins: XAxisLinkBee<Self> {
             return XAxisLinkBee(left: self, attribute: .centerXWithinMargins)
         }
         
-        public var centerYWithinMargins: YAxisLinkBee<Self> {
+        var centerYWithinMargins: YAxisLinkBee<Self> {
             return YAxisLinkBee(left: self, attribute: .centerYWithinMargins)
         }
     }
 
     @available(iOS 8.0, tvOS 8.0, *)
     public extension QueenBee {
-        public var leftMargin: XAxisLinkBee<QueenBee> {
+        var leftMargin: XAxisLinkBee<QueenBee> {
             return XAxisLinkBee(left: self, attribute: .leftMargin)
         }
         
-        public var rightMargin: XAxisLinkBee<QueenBee> {
+        var rightMargin: XAxisLinkBee<QueenBee> {
             return XAxisLinkBee(left: self, attribute: .rightMargin)
         }
         
-        public var topMargin: YAxisLinkBee<QueenBee> {
+        var topMargin: YAxisLinkBee<QueenBee> {
             return YAxisLinkBee(left: self, attribute: .topMargin)
         }
         
-        public var bottomMargin: YAxisLinkBee<QueenBee> {
+        var bottomMargin: YAxisLinkBee<QueenBee> {
             return YAxisLinkBee(left: self, attribute: .bottomMargin)
         }
         
-        public var leadingMargin: XAxisLinkBee<QueenBee> {
+        var leadingMargin: XAxisLinkBee<QueenBee> {
             return XAxisLinkBee(left: self, attribute: .leadingMargin)
         }
         
-        public var trailingMargin: XAxisLinkBee<QueenBee> {
+        var trailingMargin: XAxisLinkBee<QueenBee> {
             return XAxisLinkBee(left: self, attribute: .trailingMargin)
         }
         
-        public var centerXWithinMargins: XAxisLinkBee<QueenBee> {
+        var centerXWithinMargins: XAxisLinkBee<QueenBee> {
             return XAxisLinkBee(left: self, attribute: .centerXWithinMargins)
         }
         
-        public var centerYWithinMargins: YAxisLinkBee<QueenBee> {
+        var centerYWithinMargins: YAxisLinkBee<QueenBee> {
             return YAxisLinkBee(left: self, attribute: .centerYWithinMargins)
         }
     }

@@ -33,7 +33,7 @@
 #endif
 
 public extension QueenBee {
-    public var edges: EdgesBee {
+    var edges: EdgesBee {
         return EdgesBee(queenBee: self)
     }
 }

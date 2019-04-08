@@ -32,7 +32,7 @@
 #endif
 
 public extension QueenBee {
-    public var size: SizeBee {
+    var size: SizeBee {
         return SizeBee(queenBee: self)
     }
 }

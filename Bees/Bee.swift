@@ -59,14 +59,14 @@ public struct QueenBee {
 
 
 public extension View {
-    public var bee: QueenBee {
+    var bee: QueenBee {
         return QueenBee(target: self)
     }
 }
 
 @available(iOS 9.0, tvOS 9.0, OSX 10.11, *)
 public extension LayoutGuide {
-    public var bee: QueenBee {
+    var bee: QueenBee {
         return QueenBee(target: self)
     }
 }
@@ -89,26 +89,26 @@ public protocol Formation {
 
 public extension Formation {
     @discardableResult
-    public static func >=(lhs: Self, rhs: Self) -> ConstraintsType {
+    static func >=(lhs: Self, rhs: Self) -> ConstraintsType {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .greaterThanOrEqual)
     }
     
     @discardableResult
-    public static func <=(lhs: Self, rhs: Self) -> ConstraintsType {
+    static func <=(lhs: Self, rhs: Self) -> ConstraintsType {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .lessThanOrEqual)
     }
     
     @discardableResult
-    public static func ==(lhs: Self, rhs: Self) -> ConstraintsType {
+    static func ==(lhs: Self, rhs: Self) -> ConstraintsType {
         return self.makeConstraints(lhs: lhs, rhs: rhs, relation: .equal)
     }
     
-    public static func ~(lhs: Self, rhs: LayoutPriority) -> Self {
+    static func ~(lhs: Self, rhs: LayoutPriority) -> Self {
         self.prioritize(lhs: lhs, rhs: rhs)
         return lhs
     }
     
-    public static func ~(lhs: Self, rhs: Float) -> Self {
+    static func ~(lhs: Self, rhs: Float) -> Self {
         return lhs ~ LayoutPriority(rhs)
     }
 }
