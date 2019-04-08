@@ -38,8 +38,8 @@ view3.bee.edges == superView.bee.edges.inset(10)
 ## 环境
 
 - iOS 8.0+/tvOS 9.0+/macOS 10.10+
-- Xcode 9.0+
-- Swift 4.0+
+- Xcode 10.0+
+- Swift 5.0
 
 ## 安装
 
