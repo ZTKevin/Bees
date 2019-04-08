@@ -14,4 +14,4 @@ matrix:
   - name: macOS
     xcode_project: Bees.xcodeproj
     xcode_scheme: Bees-macOS
-    xcode_destination: platform=macOS,OS=10.14.4
+    xcode_destination: platform=macOS
