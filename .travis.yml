@@ -1,17 +1,17 @@
 language: swift
-osx_image: xcode10.2
+osx_image: xcode11.1
 
 matrix:
   include:
   - name: iOS
     xcode_project: Bees.xcodeproj
-    xcode_scheme: Bees-iOS
+    xcode_scheme: Bees
     xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone XS
   - name: tvOS
     xcode_project: Bees.xcodeproj
-    xcode_scheme: Bees-tvOS
+    xcode_scheme: Bees
     xcode_destination: platform=tvOS Simulator,OS=12.2,name=Apple TV 4K
   - name: macOS
     xcode_project: Bees.xcodeproj
-    xcode_scheme: Bees-macOS
+    xcode_scheme: Bees
     xcode_destination: platform=macOS
