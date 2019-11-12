@@ -31,7 +31,7 @@
 #endif
 
 public extension QueenBee {
-    public var center: CenterBee {
+    var center: CenterBee {
         return CenterBee(queenBee: self)
     }
 }
@@ -84,7 +84,7 @@ public class CenterBee: Formation {
 
 #if !os(macOS)
     public extension CenterBee {
-        public func offset(_ offset: UIOffset) -> CenterBee {
+        func offset(_ offset: UIOffset) -> CenterBee {
             return self.offset(horizontal: offset.horizontal, vertical: offset.vertical)
         }
     }
