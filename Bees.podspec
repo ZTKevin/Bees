@@ -22,6 +22,8 @@ Pod::Spec.new do |s|
   s.osx.deployment_target  = "10.10"
   s.tvos.deployment_target = "9.0"
 
+  s.swift_version = "5.1"
+
   s.source       = { :git => "https://github.com/hongcaiyu/Bees.git", :tag => s.version }
   s.source_files = "Bees/*.swift"
 
