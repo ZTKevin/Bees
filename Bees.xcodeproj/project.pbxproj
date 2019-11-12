@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07637C8E237A92FF00E05FE9 /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
+		07637C8F237A92FF00E05FE9 /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07637C92237A930600E05FE9 /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
+		07637C93237A930600E05FE9 /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18060AE61FC7C25B006559CE /* Bees.h in Headers */ = {isa = PBXBuildFile; fileRef = 18060AE41FC7C25B006559CE /* Bees.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18060AF31FC7C38E006559CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060AF21FC7C38E006559CE /* AppDelegate.swift */; };
 		18060AF51FC7C38E006559CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060AF41FC7C38E006559CE /* ViewController.swift */; };
@@ -14,58 +18,44 @@
 		18060AFA1FC7C38E006559CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18060AF91FC7C38E006559CE /* Assets.xcassets */; };
 		18060AFD1FC7C38E006559CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060AFB1FC7C38E006559CE /* LaunchScreen.storyboard */; };
 		181DA5C1200707910069A8F2 /* Pollen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C0200707910069A8F2 /* Pollen.swift */; };
-		181DA5C2200707910069A8F2 /* Pollen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C0200707910069A8F2 /* Pollen.swift */; };
-		181DA5C3200707910069A8F2 /* Pollen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C0200707910069A8F2 /* Pollen.swift */; };
 		181DA5C520070B800069A8F2 /* LinkBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C420070B800069A8F2 /* LinkBee.swift */; };
-		181DA5C620070B800069A8F2 /* LinkBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C420070B800069A8F2 /* LinkBee.swift */; };
-		181DA5C720070B800069A8F2 /* LinkBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C420070B800069A8F2 /* LinkBee.swift */; };
 		181DA5C9200746AF0069A8F2 /* SizeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C8200746AF0069A8F2 /* SizeBee.swift */; };
-		181DA5CA200746AF0069A8F2 /* SizeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C8200746AF0069A8F2 /* SizeBee.swift */; };
-		181DA5CB200746AF0069A8F2 /* SizeBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5C8200746AF0069A8F2 /* SizeBee.swift */; };
 		181DA5D2200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
-		181DA5D3200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
-		181DA5D4200C49480069A8F2 /* CenterBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D1200C49480069A8F2 /* CenterBee.swift */; };
 		181DA5D6200C4BEC0069A8F2 /* EdgesBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */; };
-		181DA5D7200C4BEC0069A8F2 /* EdgesBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */; };
-		181DA5D8200C4BEC0069A8F2 /* EdgesBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */; };
 		187D5E5D1FC7C607005986AD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
 		187D5E601FC7F48F005986AD /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		187D5E611FC7F48F005986AD /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1897B281202413C1006BFC8A /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D201FD68D5C00843A49 /* Bees.framework */; };
-		1897B28720241408006BFC8A /* LinkBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A88E762023218600C90E6A /* LinkBeeTests.swift */; };
-		1897B29120241443006BFC8A /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D2D1FD68DA000843A49 /* Bees.framework */; };
-		1897B29720241473006BFC8A /* LinkBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A88E762023218600C90E6A /* LinkBeeTests.swift */; };
 		1897B299202415C7006BFC8A /* SizeBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B298202415C7006BFC8A /* SizeBeeTests.swift */; };
-		1897B29A202415C7006BFC8A /* SizeBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B298202415C7006BFC8A /* SizeBeeTests.swift */; };
-		1897B29B202415C7006BFC8A /* SizeBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B298202415C7006BFC8A /* SizeBeeTests.swift */; };
 		1897B29D20241851006BFC8A /* CenterBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B29C20241851006BFC8A /* CenterBeeTests.swift */; };
-		1897B29E20241851006BFC8A /* CenterBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B29C20241851006BFC8A /* CenterBeeTests.swift */; };
-		1897B29F20241851006BFC8A /* CenterBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B29C20241851006BFC8A /* CenterBeeTests.swift */; };
 		1897B2A120243792006BFC8A /* EdgesBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B2A020243792006BFC8A /* EdgesBeeTests.swift */; };
-		1897B2A220243792006BFC8A /* EdgesBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B2A020243792006BFC8A /* EdgesBeeTests.swift */; };
-		1897B2A320243792006BFC8A /* EdgesBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897B2A020243792006BFC8A /* EdgesBeeTests.swift */; };
 		18A88E772023218600C90E6A /* LinkBeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A88E762023218600C90E6A /* LinkBeeTests.swift */; };
 		18A88E792023218600C90E6A /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18060AE11FC7C25B006559CE /* Bees.framework */; };
 		18EB4D3D1FD68E5B00843A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D3C1FD68E5B00843A49 /* AppDelegate.swift */; };
 		18EB4D3F1FD68E5B00843A49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D3E1FD68E5B00843A49 /* ViewController.swift */; };
 		18EB4D421FD68E5B00843A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EB4D401FD68E5B00843A49 /* Main.storyboard */; };
 		18EB4D441FD68E5B00843A49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EB4D431FD68E5B00843A49 /* Assets.xcassets */; };
-		18EB4D491FD68EB100843A49 /* Bees.h in Headers */ = {isa = PBXBuildFile; fileRef = 18060AE41FC7C25B006559CE /* Bees.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18EB4D4A1FD68EBE00843A49 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
-		18EB4D4D1FD68F8F00843A49 /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D201FD68D5C00843A49 /* Bees.framework */; };
-		18EB4D4E1FD68F8F00843A49 /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D201FD68D5C00843A49 /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18EB4D591FD690D600843A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D581FD690D600843A49 /* AppDelegate.swift */; };
 		18EB4D5B1FD690D600843A49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D5A1FD690D600843A49 /* ViewController.swift */; };
 		18EB4D5D1FD690D600843A49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EB4D5C1FD690D600843A49 /* Assets.xcassets */; };
 		18EB4D601FD690D600843A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EB4D5E1FD690D600843A49 /* Main.storyboard */; };
 		18EB4D671FD6912000843A49 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4D661FD6912000843A49 /* View.swift */; };
-		18EB4D681FD6949F00843A49 /* Bees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D2D1FD68DA000843A49 /* Bees.framework */; };
-		18EB4D691FD6949F00843A49 /* Bees.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB4D2D1FD68DA000843A49 /* Bees.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		18EB4D6D1FD6954000843A49 /* Bees.h in Headers */ = {isa = PBXBuildFile; fileRef = 18060AE41FC7C25B006559CE /* Bees.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18EB4D6E1FD6954E00843A49 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D5E5C1FC7C607005986AD /* Bee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		07637C90237A92FF00E05FE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18060AE01FC7C25B006559CE;
+			remoteInfo = Bees;
+		};
+		07637C94237A930600E05FE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18060AE01FC7C25B006559CE;
+			remoteInfo = Bees;
+		};
 		18060B021FC7C3F0006559CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
@@ -73,40 +63,12 @@
 			remoteGlobalIDString = 18060AE01FC7C25B006559CE;
 			remoteInfo = Bees;
 		};
-		1897B282202413C1006BFC8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18EB4D1F1FD68D5C00843A49;
-			remoteInfo = "Bees-tvOS";
-		};
-		1897B29220241443006BFC8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18EB4D2C1FD68DA000843A49;
-			remoteInfo = "Bees-macOS";
-		};
 		18A88E7A2023218600C90E6A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 18060AE01FC7C25B006559CE;
 			remoteInfo = "Bees-iOS";
-		};
-		18EB4D4F1FD68F8F00843A49 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18EB4D1F1FD68D5C00843A49;
-			remoteInfo = "Bees-tvOS";
-		};
-		18EB4D6A1FD6949F00843A49 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18060AD81FC7C25B006559CE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18EB4D2C1FD68DA000843A49;
-			remoteInfo = "Bees-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -128,7 +90,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				18EB4D4E1FD68F8F00843A49 /* Bees.framework in Embed Frameworks */,
+				07637C8F237A92FF00E05FE9 /* Bees.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				18EB4D691FD6949F00843A49 /* Bees.framework in Embed Frameworks */,
+				07637C93237A930600E05FE9 /* Bees.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,9 +125,7 @@
 		181DA5D1200C49480069A8F2 /* CenterBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBee.swift; sourceTree = "<group>"; };
 		181DA5D5200C4BEC0069A8F2 /* EdgesBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesBee.swift; sourceTree = "<group>"; };
 		187D5E5C1FC7C607005986AD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
-		1897B27C202413C1006BFC8A /* BeesTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BeesTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1897B280202413C1006BFC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1897B28C20241443006BFC8A /* BeesTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BeesTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1897B29020241443006BFC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1897B298202415C7006BFC8A /* SizeBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeBeeTests.swift; sourceTree = "<group>"; };
 		1897B29C20241851006BFC8A /* CenterBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBeeTests.swift; sourceTree = "<group>"; };
@@ -173,8 +133,6 @@
 		18A88E742023218600C90E6A /* BeesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A88E762023218600C90E6A /* LinkBeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBeeTests.swift; sourceTree = "<group>"; };
 		18A88E782023218600C90E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18EB4D201FD68D5C00843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18EB4D2D1FD68DA000843A49 /* Bees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB4D3A1FD68E5A00843A49 /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB4D3C1FD68E5B00843A49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EB4D3E1FD68E5B00843A49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,22 +165,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1897B279202413C1006BFC8A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1897B281202413C1006BFC8A /* Bees.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1897B28920241443006BFC8A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1897B29120241443006BFC8A /* Bees.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18A88E712023218600C90E6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,25 +173,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18EB4D1C1FD68D5C00843A49 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18EB4D291FD68DA000843A49 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18EB4D371FD68E5A00843A49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EB4D4D1FD68F8F00843A49 /* Bees.framework in Frameworks */,
+				07637C8E237A92FF00E05FE9 /* Bees.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +185,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EB4D681FD6949F00843A49 /* Bees.framework in Frameworks */,
+				07637C92237A930600E05FE9 /* Bees.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07637C8D237A92FF00E05FE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18060AD71FC7C25B006559CE = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +206,7 @@
 				18060AE31FC7C25B006559CE /* Bees */,
 				18A88E6F2023217400C90E6A /* Test */,
 				18060AE21FC7C25B006559CE /* Products */,
+				07637C8D237A92FF00E05FE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,13 +215,9 @@
 			children = (
 				18060AE11FC7C25B006559CE /* Bees.framework */,
 				18060AF01FC7C38D006559CE /* iOS Demo.app */,
-				18EB4D201FD68D5C00843A49 /* Bees.framework */,
-				18EB4D2D1FD68DA000843A49 /* Bees.framework */,
 				18EB4D3A1FD68E5A00843A49 /* tvOS Demo.app */,
 				18EB4D561FD690D500843A49 /* macOS Demo.app */,
 				18A88E742023218600C90E6A /* BeesTests.xctest */,
-				1897B27C202413C1006BFC8A /* BeesTests-tvOS.xctest */,
-				1897B28C20241443006BFC8A /* BeesTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -403,28 +335,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18EB4D1D1FD68D5C00843A49 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18EB4D491FD68EB100843A49 /* Bees.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18EB4D2A1FD68DA000843A49 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18EB4D6D1FD6954000843A49 /* Bees.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		18060AE01FC7C25B006559CE /* Bees-iOS */ = {
+		18060AE01FC7C25B006559CE /* Bees */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18060AE91FC7C25B006559CE /* Build configuration list for PBXNativeTarget "Bees-iOS" */;
+			buildConfigurationList = 18060AE91FC7C25B006559CE /* Build configuration list for PBXNativeTarget "Bees" */;
 			buildPhases = (
 				18060ADC1FC7C25B006559CE /* Sources */,
 				18060ADD1FC7C25B006559CE /* Frameworks */,
@@ -435,7 +351,7 @@
 			);
 			dependencies = (
 			);
-			name = "Bees-iOS";
+			name = Bees;
 			productName = Bees;
 			productReference = 18060AE11FC7C25B006559CE /* Bees.framework */;
 			productType = "com.apple.product-type.framework";
@@ -459,42 +375,6 @@
 			productReference = 18060AF01FC7C38D006559CE /* iOS Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1897B27B202413C1006BFC8A /* BeesTests-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1897B286202413C1006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-tvOS" */;
-			buildPhases = (
-				1897B278202413C1006BFC8A /* Sources */,
-				1897B279202413C1006BFC8A /* Frameworks */,
-				1897B27A202413C1006BFC8A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1897B283202413C1006BFC8A /* PBXTargetDependency */,
-			);
-			name = "BeesTests-tvOS";
-			productName = "BeesTests-tvOS";
-			productReference = 1897B27C202413C1006BFC8A /* BeesTests-tvOS.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1897B28B20241443006BFC8A /* BeesTests-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1897B29420241443006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-macOS" */;
-			buildPhases = (
-				1897B28820241443006BFC8A /* Sources */,
-				1897B28920241443006BFC8A /* Frameworks */,
-				1897B28A20241443006BFC8A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1897B29320241443006BFC8A /* PBXTargetDependency */,
-			);
-			name = "BeesTests-macOS";
-			productName = "BeesTests-macOS";
-			productReference = 1897B28C20241443006BFC8A /* BeesTests-macOS.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		18A88E732023218600C90E6A /* BeesTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18A88E7C2023218600C90E6A /* Build configuration list for PBXNativeTarget "BeesTests" */;
@@ -513,42 +393,6 @@
 			productReference = 18A88E742023218600C90E6A /* BeesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		18EB4D1F1FD68D5C00843A49 /* Bees-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18EB4D251FD68D5C00843A49 /* Build configuration list for PBXNativeTarget "Bees-tvOS" */;
-			buildPhases = (
-				18EB4D1B1FD68D5C00843A49 /* Sources */,
-				18EB4D1C1FD68D5C00843A49 /* Frameworks */,
-				18EB4D1D1FD68D5C00843A49 /* Headers */,
-				18EB4D1E1FD68D5C00843A49 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Bees-tvOS";
-			productName = "Bees-tvOS";
-			productReference = 18EB4D201FD68D5C00843A49 /* Bees.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		18EB4D2C1FD68DA000843A49 /* Bees-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18EB4D321FD68DA000843A49 /* Build configuration list for PBXNativeTarget "Bees-macOS" */;
-			buildPhases = (
-				18EB4D281FD68DA000843A49 /* Sources */,
-				18EB4D291FD68DA000843A49 /* Frameworks */,
-				18EB4D2A1FD68DA000843A49 /* Headers */,
-				18EB4D2B1FD68DA000843A49 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Bees-macOS";
-			productName = "Bees-macOS";
-			productReference = 18EB4D2D1FD68DA000843A49 /* Bees.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		18EB4D391FD68E5A00843A49 /* tvOS Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18EB4D461FD68E5B00843A49 /* Build configuration list for PBXNativeTarget "tvOS Demo" */;
@@ -561,7 +405,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				18EB4D501FD68F8F00843A49 /* PBXTargetDependency */,
+				07637C91237A92FF00E05FE9 /* PBXTargetDependency */,
 			);
 			name = "tvOS Demo";
 			productName = "tvOS Demo";
@@ -580,7 +424,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				18EB4D6B1FD6949F00843A49 /* PBXTargetDependency */,
+				07637C95237A930600E05FE9 /* PBXTargetDependency */,
 			);
 			name = "macOS Demo";
 			productName = "macOS Demo";
@@ -606,26 +450,8 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					1897B27B202413C1006BFC8A = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
-					1897B28B20241443006BFC8A = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
-						ProvisioningStyle = Automatic;
-					};
 					18A88E732023218600C90E6A = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
-					18EB4D1F1FD68D5C00843A49 = {
-						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-					};
-					18EB4D2C1FD68DA000843A49 = {
-						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
 					18EB4D391FD68E5A00843A49 = {
@@ -652,15 +478,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18060AE01FC7C25B006559CE /* Bees-iOS */,
-				18EB4D1F1FD68D5C00843A49 /* Bees-tvOS */,
-				18EB4D2C1FD68DA000843A49 /* Bees-macOS */,
+				18060AE01FC7C25B006559CE /* Bees */,
+				18A88E732023218600C90E6A /* BeesTests */,
 				18060AEF1FC7C38D006559CE /* iOS Demo */,
 				18EB4D391FD68E5A00843A49 /* tvOS Demo */,
 				18EB4D551FD690D500843A49 /* macOS Demo */,
-				18A88E732023218600C90E6A /* BeesTests */,
-				1897B27B202413C1006BFC8A /* BeesTests-tvOS */,
-				1897B28B20241443006BFC8A /* BeesTests-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -683,35 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1897B27A202413C1006BFC8A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1897B28A20241443006BFC8A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18A88E722023218600C90E6A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18EB4D1E1FD68D5C00843A49 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18EB4D2B1FD68DA000843A49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -761,28 +555,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1897B278202413C1006BFC8A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1897B29E20241851006BFC8A /* CenterBeeTests.swift in Sources */,
-				1897B2A220243792006BFC8A /* EdgesBeeTests.swift in Sources */,
-				1897B28720241408006BFC8A /* LinkBeeTests.swift in Sources */,
-				1897B29A202415C7006BFC8A /* SizeBeeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1897B28820241443006BFC8A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1897B29F20241851006BFC8A /* CenterBeeTests.swift in Sources */,
-				1897B2A320243792006BFC8A /* EdgesBeeTests.swift in Sources */,
-				1897B29720241473006BFC8A /* LinkBeeTests.swift in Sources */,
-				1897B29B202415C7006BFC8A /* SizeBeeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18A88E702023218600C90E6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -791,32 +563,6 @@
 				1897B2A120243792006BFC8A /* EdgesBeeTests.swift in Sources */,
 				18A88E772023218600C90E6A /* LinkBeeTests.swift in Sources */,
 				1897B299202415C7006BFC8A /* SizeBeeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18EB4D1B1FD68D5C00843A49 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18EB4D4A1FD68EBE00843A49 /* Bee.swift in Sources */,
-				181DA5D7200C4BEC0069A8F2 /* EdgesBee.swift in Sources */,
-				181DA5C620070B800069A8F2 /* LinkBee.swift in Sources */,
-				181DA5C2200707910069A8F2 /* Pollen.swift in Sources */,
-				181DA5CA200746AF0069A8F2 /* SizeBee.swift in Sources */,
-				181DA5D3200C49480069A8F2 /* CenterBee.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18EB4D281FD68DA000843A49 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18EB4D6E1FD6954E00843A49 /* Bee.swift in Sources */,
-				181DA5D8200C4BEC0069A8F2 /* EdgesBee.swift in Sources */,
-				181DA5C720070B800069A8F2 /* LinkBee.swift in Sources */,
-				181DA5C3200707910069A8F2 /* Pollen.swift in Sources */,
-				181DA5CB200746AF0069A8F2 /* SizeBee.swift in Sources */,
-				181DA5D4200C49480069A8F2 /* CenterBee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,35 +588,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		07637C91237A92FF00E05FE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18060AE01FC7C25B006559CE /* Bees */;
+			targetProxy = 07637C90237A92FF00E05FE9 /* PBXContainerItemProxy */;
+		};
+		07637C95237A930600E05FE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18060AE01FC7C25B006559CE /* Bees */;
+			targetProxy = 07637C94237A930600E05FE9 /* PBXContainerItemProxy */;
+		};
 		18060B031FC7C3F0006559CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 18060AE01FC7C25B006559CE /* Bees-iOS */;
+			target = 18060AE01FC7C25B006559CE /* Bees */;
 			targetProxy = 18060B021FC7C3F0006559CE /* PBXContainerItemProxy */;
-		};
-		1897B283202413C1006BFC8A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18EB4D1F1FD68D5C00843A49 /* Bees-tvOS */;
-			targetProxy = 1897B282202413C1006BFC8A /* PBXContainerItemProxy */;
-		};
-		1897B29320241443006BFC8A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18EB4D2C1FD68DA000843A49 /* Bees-macOS */;
-			targetProxy = 1897B29220241443006BFC8A /* PBXContainerItemProxy */;
 		};
 		18A88E7B2023218600C90E6A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 18060AE01FC7C25B006559CE /* Bees-iOS */;
+			target = 18060AE01FC7C25B006559CE /* Bees */;
 			targetProxy = 18A88E7A2023218600C90E6A /* PBXContainerItemProxy */;
-		};
-		18EB4D501FD68F8F00843A49 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18EB4D1F1FD68D5C00843A49 /* Bees-tvOS */;
-			targetProxy = 18EB4D4F1FD68F8F00843A49 /* PBXContainerItemProxy */;
-		};
-		18EB4D6B1FD6949F00843A49 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18EB4D2C1FD68DA000843A49 /* Bees-macOS */;
-			targetProxy = 18EB4D6A1FD6949F00843A49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1041,12 +777,16 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = self.Lion.Bees;
 				PRODUCT_NAME = Bees;
+				SDKROOT = "";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvsimulator appletvos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1064,11 +804,15 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = self.Lion.Bees;
 				PRODUCT_NAME = Bees;
+				SDKROOT = "";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvsimulator appletvos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -1104,68 +848,6 @@
 			};
 			name = Release;
 		};
-		1897B284202413C1006BFC8A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Test/BeesTests-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
-			};
-			name = Debug;
-		};
-		1897B285202413C1006BFC8A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Test/BeesTests-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
-			};
-			name = Release;
-		};
-		1897B29520241443006BFC8A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Test/BeesTests-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		1897B29620241443006BFC8A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Test/BeesTests-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "hongcaiyu.BeesTests-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		18A88E7D2023218600C90E6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1173,10 +855,14 @@
 				INFOPLIST_FILE = Test/BeesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = hongcaiyu.BeesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -1187,100 +873,14 @@
 				INFOPLIST_FILE = Test/BeesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = hongcaiyu.BeesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		18EB4D261FD68D5C00843A49 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Bees/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "self.Lion.Bees-tvOS";
-				PRODUCT_NAME = Bees;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Debug;
-		};
-		18EB4D271FD68D5C00843A49 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Bees/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "self.Lion.Bees-tvOS";
-				PRODUCT_NAME = Bees;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Release;
-		};
-		18EB4D331FD68DA000843A49 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Bees/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "self.Lion.Bees-macOS";
-				PRODUCT_NAME = Bees;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		18EB4D341FD68DA000843A49 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Bees/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "self.Lion.Bees-macOS";
-				PRODUCT_NAME = Bees;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1370,7 +970,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18060AE91FC7C25B006559CE /* Build configuration list for PBXNativeTarget "Bees-iOS" */ = {
+		18060AE91FC7C25B006559CE /* Build configuration list for PBXNativeTarget "Bees" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18060AEA1FC7C25B006559CE /* Debug */,
@@ -1388,47 +988,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1897B286202413C1006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1897B284202413C1006BFC8A /* Debug */,
-				1897B285202413C1006BFC8A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1897B29420241443006BFC8A /* Build configuration list for PBXNativeTarget "BeesTests-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1897B29520241443006BFC8A /* Debug */,
-				1897B29620241443006BFC8A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		18A88E7C2023218600C90E6A /* Build configuration list for PBXNativeTarget "BeesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18A88E7D2023218600C90E6A /* Debug */,
 				18A88E7E2023218600C90E6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		18EB4D251FD68D5C00843A49 /* Build configuration list for PBXNativeTarget "Bees-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18EB4D261FD68D5C00843A49 /* Debug */,
-				18EB4D271FD68D5C00843A49 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		18EB4D321FD68DA000843A49 /* Build configuration list for PBXNativeTarget "Bees-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18EB4D331FD68DA000843A49 /* Debug */,
-				18EB4D341FD68DA000843A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
