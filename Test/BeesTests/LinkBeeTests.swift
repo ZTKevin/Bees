@@ -12,9 +12,9 @@ import Bees
 extension View {
     func layoutImmediately() {
         #if os(macOS)
-            self.layoutSubtreeIfNeeded()
+        self.layoutSubtreeIfNeeded()
         #else
-            self.layoutIfNeeded()
+        self.layoutIfNeeded()
         #endif
     }
 }

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18EB4D2C1FD68DA000843A49"
+               BlueprintIdentifier = "18060AE01FC7C25B006559CE"
                BuildableName = "Bees.framework"
-               BlueprintName = "Bees-macOS"
+               BlueprintName = "Bees"
                ReferencedContainer = "container:Bees.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,29 +27,27 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "18060AE01FC7C25B006559CE"
+            BuildableName = "Bees.framework"
+            BlueprintName = "Bees"
+            ReferencedContainer = "container:Bees.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1897B28B20241443006BFC8A"
-               BuildableName = "BeesTests-macOS.xctest"
-               BlueprintName = "BeesTests-macOS"
+               BlueprintIdentifier = "18A88E732023218600C90E6A"
+               BuildableName = "BeesTests.xctest"
+               BlueprintName = "BeesTests"
                ReferencedContainer = "container:Bees.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18EB4D2C1FD68DA000843A49"
-            BuildableName = "Bees.framework"
-            BlueprintName = "Bees-macOS"
-            ReferencedContainer = "container:Bees.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -64,14 +62,12 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18EB4D2C1FD68DA000843A49"
+            BlueprintIdentifier = "18060AE01FC7C25B006559CE"
             BuildableName = "Bees.framework"
-            BlueprintName = "Bees-macOS"
+            BlueprintName = "Bees"
             ReferencedContainer = "container:Bees.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -82,9 +78,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18EB4D2C1FD68DA000843A49"
+            BlueprintIdentifier = "18060AE01FC7C25B006559CE"
             BuildableName = "Bees.framework"
-            BlueprintName = "Bees-macOS"
+            BlueprintName = "Bees"
             ReferencedContainer = "container:Bees.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
