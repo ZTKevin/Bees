@@ -27,11 +27,28 @@
 import Foundation
 
 public class LayoutMaker {
-    private var layouts: ConstraintSet? = nil
+    private var layouts: [ConstraintSet] = []
     
+    /// This operation will deactivate all constraints that are made by this layout maker.
+    public func clear() {
+        while let set = layouts.popLast() {
+            set.deactivate()
+        }
+    }
+    
+    /// Make constraints
+    /// If you use layout maker to make constraints, the layout maker can manage those constraints.
+    /// - Parameter layoutMaker: Layout codes.
+    public func make(@LayoutBuilder layoutMaker: () -> ConstraintSet) {
+        layouts.append(layoutMaker())
+    }
+    
+    /// Remake constraints.
+    /// It will clear all made constraints. Than make the new constraints.
+    /// - Parameter layoutMaker: Layout codes.
     public func remake(@LayoutBuilder layoutMaker: () -> ConstraintSet) {
-        layouts?.deactivate()
-        layouts = layoutMaker()
+        clear()
+        make(layoutMaker: layoutMaker)
     }
     
     public init() {}
