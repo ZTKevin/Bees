@@ -32,8 +32,8 @@
     public typealias EdgeInsets = UIEdgeInsets
 #endif
 
-public extension QueenBee {
-    var edges: EdgesBee {
+extension QueenBee {
+    public var edges: EdgesBee {
         return EdgesBee(queenBee: self)
     }
 }
@@ -56,6 +56,22 @@ public struct EdgesConstraintSet: ConstraintSet {
         left.isActive = false
         bottom.isActive = false
         right.isActive = false
+    }
+    
+    public var constants: EdgeInsets {
+        get {
+            return EdgeInsets(top: top.constant,
+                              left: left.constant,
+                              bottom: bottom.constant,
+                              right: right.constant)
+        }
+        
+        nonmutating set {
+            top.constant = newValue.top
+            left.constant = newValue.left
+            bottom.constant = newValue.bottom
+            right.constant = newValue.right
+        }
     }
 }
 

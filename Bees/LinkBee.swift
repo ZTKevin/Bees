@@ -78,6 +78,17 @@ public struct LinkConstraintSet: ConstraintSet {
         return constraintAt(index: 3)
     }
 
+    public var constants: [CGFloat] {
+        get {
+            return constraints.map { $0.constant }
+        }
+        
+        nonmutating set {
+            newValue.enumerated().forEach { (index, value) in
+                constraints[index].constant = value
+            }
+        }
+    }
 }
 
 public class LinkBee {

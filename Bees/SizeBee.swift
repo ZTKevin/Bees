@@ -26,13 +26,13 @@
 
 
 #if os(macOS)
-    import AppKit
+import AppKit
 #else
-    import UIKit
+import UIKit
 #endif
 
-public extension QueenBee {
-    var size: SizeBee {
+extension QueenBee {
+    public var size: SizeBee {
         return SizeBee(queenBee: self)
     }
 }
@@ -49,6 +49,17 @@ public struct SizeConstraintSet: ConstraintSet {
     public func deactivate() {
         width.isActive = false
         height.isActive = false
+    }
+    
+    public var constants: CGSize {
+        get {
+            return CGSize(width: width.constant, height: height.constant)
+        }
+        
+        nonmutating set {
+            width.constant = newValue.width
+            height.constant = newValue.height
+        }
     }
     
 }

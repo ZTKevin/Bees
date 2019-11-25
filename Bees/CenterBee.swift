@@ -25,13 +25,30 @@
 //  SOFTWARE.
 
 #if os(macOS)
-    import AppKit
+import AppKit
+public struct Offset {
+
+    public var horizontal: CGFloat
+
+    public var vertical: CGFloat
+
+    public init() {
+        horizontal = 0
+        vertical = 0
+    }
+
+    public init(horizontal: CGFloat, vertical: CGFloat) {
+        self.horizontal = horizontal
+        self.vertical = vertical
+    }
+}
 #else
-    import UIKit
+import UIKit
+public typealias Offset = UIOffset
 #endif
 
-public extension QueenBee {
-    var center: CenterBee {
+extension QueenBee {
+    public var center: CenterBee {
         return CenterBee(queenBee: self)
     }
 }
@@ -48,6 +65,17 @@ public struct CenterConstraintSet: ConstraintSet {
     public func deactivate() {
         x.isActive = false
         y.isActive = false
+    }
+    
+    public var constants: Offset {
+        get {
+            return Offset(horizontal: x.constant, vertical: y.constant)
+        }
+        
+        nonmutating set {
+            x.constant = newValue.horizontal
+            y.constant = newValue.vertical
+        }
     }
     
 }
@@ -69,6 +97,10 @@ public class CenterBee: Formation {
         return self
     }
     
+    public func offset(_ offset: Offset) -> CenterBee {
+        return self.offset(horizontal: offset.horizontal, vertical: offset.vertical)
+    }
+    
     public static func makeConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> CenterConstraintSet {
         let xConstraint = Pollen.makeConstraint(lhs: lhs.x, rhs: rhs.x, relation: relation)
         let yConstraint = Pollen.makeConstraint(lhs: lhs.y, rhs: rhs.y, relation: relation)
@@ -81,12 +113,3 @@ public class CenterBee: Formation {
     }
     
 }
-
-#if !os(macOS)
-    public extension CenterBee {
-        func offset(_ offset: UIOffset) -> CenterBee {
-            return self.offset(horizontal: offset.horizontal, vertical: offset.vertical)
-        }
-    }
-#endif
-
