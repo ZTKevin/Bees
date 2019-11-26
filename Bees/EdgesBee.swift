@@ -109,8 +109,8 @@ public class EdgesBee: Formation {
     public static func makeConstraints(lhs: EdgesBee, rhs: EdgesBee, relation: LayoutRelation) -> EdgesConstraintSet {
         let top = Pollen.makeConstraint(lhs: lhs.top, rhs: rhs.top, relation: relation)
         let left = Pollen.makeConstraint(lhs: lhs.left, rhs: rhs.left, relation: relation)
-        let bottom = Pollen.makeConstraint(lhs: lhs.bottom, rhs: rhs.bottom, relation: relation)
-        let right = Pollen.makeConstraint(lhs: lhs.right, rhs: rhs.right, relation: relation)
+        let bottom = Pollen.makeConstraint(lhs: rhs.bottom, rhs: lhs.bottom, relation: relation)
+        let right = Pollen.makeConstraint(lhs: rhs.right, rhs: lhs.right, relation: relation)
         return EdgesConstraintSet(top: top, left: left, bottom: bottom, right: right)
     }
     
