@@ -32,8 +32,8 @@
     public typealias EdgeInsets = UIEdgeInsets
 #endif
 
-public extension QueenBee {
-    var edges: EdgesBee {
+extension QueenBee {
+    public var edges: EdgesBee {
         return EdgesBee(queenBee: self)
     }
 }
@@ -56,6 +56,22 @@ public struct EdgesConstraintSet: ConstraintSet {
         left.isActive = false
         bottom.isActive = false
         right.isActive = false
+    }
+    
+    public var constants: EdgeInsets {
+        get {
+            return EdgeInsets(top: top.constant,
+                              left: left.constant,
+                              bottom: bottom.constant,
+                              right: right.constant)
+        }
+        
+        nonmutating set {
+            top.constant = newValue.top
+            left.constant = newValue.left
+            bottom.constant = newValue.bottom
+            right.constant = newValue.right
+        }
     }
 }
 
@@ -93,8 +109,8 @@ public class EdgesBee: Formation {
     public static func makeConstraints(lhs: EdgesBee, rhs: EdgesBee, relation: LayoutRelation) -> EdgesConstraintSet {
         let top = Pollen.makeConstraint(lhs: lhs.top, rhs: rhs.top, relation: relation)
         let left = Pollen.makeConstraint(lhs: lhs.left, rhs: rhs.left, relation: relation)
-        let bottom = Pollen.makeConstraint(lhs: lhs.bottom, rhs: rhs.bottom, relation: relation)
-        let right = Pollen.makeConstraint(lhs: lhs.right, rhs: rhs.right, relation: relation)
+        let bottom = Pollen.makeConstraint(lhs: rhs.bottom, rhs: lhs.bottom, relation: relation)
+        let right = Pollen.makeConstraint(lhs: rhs.right, rhs: lhs.right, relation: relation)
         return EdgesConstraintSet(top: top, left: left, bottom: bottom, right: right)
     }
     
