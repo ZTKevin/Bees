@@ -102,6 +102,7 @@ public class CenterBee: Formation {
     }
     
     public static func makeConstraints(lhs: CenterBee, rhs: CenterBee, relation: LayoutRelation) -> CenterConstraintSet {
+        lhs.x.disableAutoresizingTranslating()
         let xConstraint = Pollen.makeConstraint(lhs: lhs.x, rhs: rhs.x, relation: relation)
         let yConstraint = Pollen.makeConstraint(lhs: lhs.y, rhs: rhs.y, relation: relation)
         return CenterConstraintSet(x: xConstraint, y: yConstraint)

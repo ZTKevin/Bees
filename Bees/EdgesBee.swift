@@ -107,6 +107,7 @@ public class EdgesBee: Formation {
     }
     
     public static func makeConstraints(lhs: EdgesBee, rhs: EdgesBee, relation: LayoutRelation) -> EdgesConstraintSet {
+        lhs.left.disableAutoresizingTranslating()
         let top = Pollen.makeConstraint(lhs: lhs.top, rhs: rhs.top, relation: relation)
         let left = Pollen.makeConstraint(lhs: lhs.left, rhs: rhs.left, relation: relation)
         let bottom = Pollen.makeConstraint(lhs: rhs.bottom, rhs: lhs.bottom, relation: relation)

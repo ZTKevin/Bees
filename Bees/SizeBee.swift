@@ -98,6 +98,7 @@ public class SizeBee: Formation {
     }
     
     public static func makeConstraints(lhs: SizeBee, rhs: SizeBee, relation: LayoutRelation) -> SizeConstraintSet {
+        lhs.width.disableAutoresizingTranslating()
         let widthConstraint = Pollen.makeConstraint(lhs: lhs.width, rhs: rhs.width, relation: relation)
         let heightConstraint = Pollen.makeConstraint(lhs: lhs.height, rhs: rhs.height, relation: relation)
         return SizeConstraintSet(width: widthConstraint, height: heightConstraint)

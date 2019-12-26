@@ -138,6 +138,7 @@ public extension Formation where Self: LinkBee, ConstraintsType == LinkConstrain
     
     // MARK: Formation
     static func makeConstraints(lhs: Self, rhs: Self, relation: LayoutRelation) -> LinkConstraintSet {
+        lhs.pollen.disableAutoresizingTranslating()
         var constraints = LinkConstraintSet()
         func makeConstraints(lhs: LinkBee, rhs: LinkBee) {
             if let left = lhs.leftBee, let right = rhs.leftBee {

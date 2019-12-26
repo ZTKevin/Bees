@@ -77,8 +77,11 @@ class Pollen {
         self.priority = priority
     }
     
+    func disableAutoresizingTranslating() {
+        (bee.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     static func makeConstraint(lhs: Pollen, rhs: Pollen, relation: LayoutRelation) -> LayoutConstraint {
-        (lhs.bee.target as? View)?.translatesAutoresizingMaskIntoConstraints = false
         let multiplier = rhs.multiplier / lhs.multiplier
         let constant = rhs.constant - lhs.constant
         
